@@ -10,18 +10,20 @@ public class GameLoader : PunBehaviour
     [SerializeField] private TMPro.TMP_InputField _nicknameField;
     [SerializeField] private TMPro.TMP_Text _playersInRoom;
     [SerializeField] private Button _buttonStartGame;
+    [SerializeField] private Button _buttonJoinLobby;
     [SerializeField] private GameObject _lobyWindow;
     [SerializeField] private GameObject _mainWindow;
-
+    [SerializeField] private GameObject _imageLoop;
     private bool isConnecting;
 
     private void Awake()
     {
         PhotonNetwork.autoJoinLobby = false;
         PhotonNetwork.automaticallySyncScene = true;
-
         //botão startGame só estará disponível para o usuário dono da sala (Master)
         _buttonStartGame.interactable = false;
+        _buttonJoinLobby.interactable = true;
+        _imageLoop.SetActive(false);
         _mainWindow.SetActive(true);
         _lobyWindow.SetActive(false);
     }
@@ -29,6 +31,9 @@ public class GameLoader : PunBehaviour
     public void Connect()
     {        
         isConnecting = true;
+
+        _imageLoop.SetActive(true);
+        _buttonJoinLobby.interactable = false;
         //caso já tenha connectado com o servidor, inicia o processo de entrar em uma sala, senão, conecta com o servidor
         if (PhotonNetwork.connected)
         {
@@ -61,14 +66,19 @@ public class GameLoader : PunBehaviour
     //chamado quando o player local é desconectado
     public override void OnLeftRoom()
     {
+        _buttonJoinLobby.interactable = true;
         _mainWindow.SetActive(true);
         _lobyWindow.SetActive(false);
+        _imageLoop.SetActive(false);
         SceneManager.LoadScene("Main");
     }
 
     //chamado quando algum player é desconectado
     public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
     {
+        _buttonJoinLobby.interactable = true;
+        _buttonStartGame.interactable = false;
+        _imageLoop.SetActive(false);
         base.OnPhotonPlayerDisconnected(otherPlayer);
         if (PhotonNetwork.connected)
         {
@@ -87,10 +97,14 @@ public class GameLoader : PunBehaviour
         _lobyWindow.SetActive(true);
 
         this.photonView.RPC("LoadPlayersView", PhotonTargets.AllBuffered);
+        _imageLoop.SetActive(false);
+        _buttonJoinLobby.interactable = true;
     }
 
     public void LoadGame(string gameName)
     {
+        _buttonJoinLobby.interactable = false;
+        _imageLoop.SetActive(true);
         this.photonView.RPC("LoadScene", PhotonTargets.AllBuffered, gameName);
     }
 
