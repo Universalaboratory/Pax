@@ -1,25 +1,32 @@
 
 using UnityEngine;
 using Photon;
-using System.Collections.Generic;
+
 //Responsavel por Executar comandos simples
 public class PlayerCommands : PunBehaviour
 {
-    Card[] cards;
+    private Card[] _cards;
+
+    private Transform _logParent;
+    [SerializeField] private GameObject _messageLog;
+
     private void Start()
     {
-        cards = GameObject.FindObjectsOfType<Card>();
-        foreach (Card card in cards)
+        _logParent = GameObject.FindGameObjectWithTag("LogParent").transform;
+        _cards = GameObject.FindObjectsOfType<Card>();
+        foreach (Card card in _cards)
         {
             card.OnCardselected += HandleCard;
+            card.OnCardUsed += HandleCardUsed;
         }
     }
 
     private void OnDisable()
     {
-        foreach (Card card in cards)
+        foreach (Card card in _cards)
         {
             card.OnCardselected -= HandleCard;
+            card.OnCardUsed += HandleCardUsed;
         }
     }
     private void Update()
@@ -38,13 +45,22 @@ public class PlayerCommands : PunBehaviour
     {
         if (PhotonView.Get(this).isMine)
         {
-            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.nome + " com o dano de: " + cardData.dano);
+            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage);
+        }
+    }
+    public void HandleCardUsed(CardData cardData, GameObject target)
+    {
+        if (PhotonView.Get(this).isMine)
+        {
+            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posição: "+ gameObject.name + " do tabuleiro.");
         }
     }
 
     [PunRPC]
     private void ConsoleLog(string msg)
     {
-        Debug.Log(msg);
+        GameObject go = Instantiate(_messageLog);
+        go.GetComponent<TMPro.TMP_Text>().text = msg;
+        go.transform.SetParent(_logParent);
     }
 }

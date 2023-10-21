@@ -1,9 +1,10 @@
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "CardData", menuName = "GMJP/CardData")]
 public class CardData : ScriptableObject
 {
-    public string nome;
-    public int dano;
-    public int tipo;
+    public string name;
+    public int damage;
+    public int type;
+    public Sprite sprite;
 }

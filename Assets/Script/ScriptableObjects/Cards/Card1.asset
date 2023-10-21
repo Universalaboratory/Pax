@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 471392040378b4c4d8c2ff91ace65e8a, type: 3}
-  m_Name: Card3
+  m_Name: Card1
   m_EditorClassIdentifier: 
-  nome: pedrinha
-  dano: 2
-  tipo: 0
+  name: Card 1
+  damage: 10
+  type: 0
+  sprite: {fileID: 0}
