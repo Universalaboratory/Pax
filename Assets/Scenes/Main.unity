@@ -1668,17 +1668,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8640519017333908825, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
   m_PrefabInstance: {fileID: 789412685}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &789412687 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 747050771361398824, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
-  m_PrefabInstance: {fileID: 789412685}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &833281172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2330,6 +2319,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3524972645452894155, guid: 49f767626db7fcc40868483c17232a88, type: 3}
   m_PrefabInstance: {fileID: 1439436454}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1533449482 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 747050771361398824, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+  m_PrefabInstance: {fileID: 1283565945}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1571702486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,7 +2702,7 @@ MonoBehaviour:
   _nicknameField: {fileID: 724296199}
   _playersInRoom: {fileID: 833281174}
   _buttonStartGame: {fileID: 2028558793}
-  _buttonJoinLobby: {fileID: 789412687}
+  _buttonJoinLobby: {fileID: 1533449482}
   _lobyWindow: {fileID: 179950592}
   _mainWindow: {fileID: 1719046043}
   _imageLoop: {fileID: 484623784}
