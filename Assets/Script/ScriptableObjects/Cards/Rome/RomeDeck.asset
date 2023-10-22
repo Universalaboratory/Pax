@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c781f7b7612574b86df4c4f8a92463, type: 3}
+  m_Name: RomeDeck
+  m_EditorClassIdentifier: 
+  Deck:
+  - {fileID: 11400000, guid: 7781830aa70de054c82b8605cccf6387, type: 2}
+  - {fileID: 11400000, guid: 4a68f4f019572f344b34ebfd6f1dda7f, type: 2}
+  - {fileID: 11400000, guid: fd00b118c70499a46a6012ae20c83c94, type: 2}
+  - {fileID: 11400000, guid: d84f226ef6fef744f81e4e56435e8b56, type: 2}
+  - {fileID: 11400000, guid: c514a3f8ecfa9274a85ca502282ddf04, type: 2}
+  - {fileID: 11400000, guid: 7781830aa70de054c82b8605cccf6387, type: 2}
+  - {fileID: 11400000, guid: 4a68f4f019572f344b34ebfd6f1dda7f, type: 2}
+  - {fileID: 11400000, guid: fd00b118c70499a46a6012ae20c83c94, type: 2}
+  - {fileID: 11400000, guid: d84f226ef6fef744f81e4e56435e8b56, type: 2}
+  - {fileID: 11400000, guid: c514a3f8ecfa9274a85ca502282ddf04, type: 2}
+  DeckName: Roman
+  DeckImage: {fileID: 21300000, guid: 66efb24ed46044ab8a039599cbc47d7b, type: 3}

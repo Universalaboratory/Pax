@@ -26,6 +26,7 @@ public class CardMover : MonoBehaviour
     private void OnEnable()
     {
         ResetPostion();
+        _usedInTable = false;
     }
 
     public void SetDeck(CardDeck deck)
@@ -76,12 +77,12 @@ public class CardMover : MonoBehaviour
     public void OnMouseEnterUI()
     {
         _card.OnCardHovered.Invoke(_card);
-        
+
     }
 
     public void OnMouseExitUI()
     {
-        
+
     }
     public void OnMouseDownUI()
     {

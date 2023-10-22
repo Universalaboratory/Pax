@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 
 public class CardHand : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI DeckAmount;
+    [SerializeField] private UnityEngine.UI.Image DeckImage;
     public CardDeck CardDeck;
     public List<Card> Cards;
-
     private Queue<CardData> _deck;
     public System.Action OnDeckFinished;
 
@@ -24,6 +25,7 @@ public class CardHand : MonoBehaviour
 
     public void ReceiveDeck(CardDeck deck)
     {
+        DeckImage.sprite = deck.DeckImage;
         CardDeck = deck;
         _deck = new Queue<CardData>();
         foreach (var card in CardDeck.Deck)
@@ -40,6 +42,13 @@ public class CardHand : MonoBehaviour
             }
             _deck.Dequeue();
         }
+        UpadteDeckAmount();
+        DeckImage.gameObject.SetActive(true);
+    }
+
+    private void UpadteDeckAmount()
+    {
+        DeckAmount.text = $"{CardDeck.DeckName} \nDeck: {_deck.Count}";
     }
 
     public void DrawCard()
@@ -47,9 +56,9 @@ public class CardHand : MonoBehaviour
         var card = Cards.Find(c => !c.gameObject.activeInHierarchy);
         if (card)
         {
-            Debug.Log("Has Card Disabled");
             if (_deck.Count > 0)
             {
+
                 card.cardData = _deck.Peek();
                 _deck.Dequeue();
                 card.gameObject.SetActive(true);
@@ -66,6 +75,7 @@ public class CardHand : MonoBehaviour
                 Debug.Log("FINISHED");
                 OnDeckFinished?.Invoke();
             }
+            UpadteDeckAmount();
         }
 
     }

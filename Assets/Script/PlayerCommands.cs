@@ -89,7 +89,6 @@ public class PlayerCommands : PunBehaviour
     {
         CardDeck deck = _cardLibrary.Decks[deckIndex];
         CardData cardData = deck.Deck[indexCard];
-        Debug.Log($"CardId{indexCard} DeckId{deckIndex} Deck{deck != null} Card{cardData != null}");
         HouseManager houseSelected = GameObject.FindGameObjectWithTag(houseTag).GetComponent<HouseManager>();
         houseSelected.handleNewAction(cardData);
 
@@ -111,10 +110,8 @@ public class PlayerCommands : PunBehaviour
     [PunRPC]
     private void ToggleTurn()
     {
-        Debug.Log($"Toggled Turn {PaxTurnManager.Instance.isMyTurn()} View {PhotonView.Get(this).isMine}");
-        if (PhotonView.Get(this).isMine && !PaxTurnManager.Instance.isMyTurn())
+        if (!PaxTurnManager.Instance.isMyTurn())
         {
-             Debug.Log($"AAAAA");
             _hand.DrawCard();
         }
         PaxTurnManager.Instance.ToggleTurn();
