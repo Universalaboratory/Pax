@@ -5,6 +5,7 @@ using Photon;
 //Responsavel por Executar comandos simples
 public class PlayerCommands : PunBehaviour
 {
+    [SerializeField]private CardData[] _cardsData;
     private Card[] _cards;
 
     private Transform _logParent;
