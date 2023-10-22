@@ -1,6 +1,8 @@
 
 using UnityEngine;
 using Photon;
+using System;
+using ExitGames.Client.Photon.StructWrapping;
 
 //Responsavel por Executar comandos simples
 public class PlayerCommands : PunBehaviour
@@ -11,6 +13,8 @@ public class PlayerCommands : PunBehaviour
     private Transform _logParent;
     [SerializeField] private GameObject _messageLog;
     [SerializeField] private GameObjectVariable _houseSelected;
+    [SerializeField] private CardLibrary _cardLibrary;
+
     private void Start()
     {
         _logParent = GameObject.FindGameObjectWithTag("LogParent").transform;
@@ -27,7 +31,7 @@ public class PlayerCommands : PunBehaviour
         foreach (Card card in _cards)
         {
             card.OnCardselected -= HandleCard;
-            card.OnCardUsed += HandleCardUsed;
+            card.OnCardUsed -= HandleCardUsed;
         }
     }
 
@@ -48,17 +52,38 @@ public class PlayerCommands : PunBehaviour
     {
         if (PhotonView.Get(this).isMine)
         {
-            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage);
+            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.cardName + " com o dano de: " + cardData.damage);
         }
     }
     public void HandleCardUsed(CardData cardData, GameObject target)
     {
         if (PhotonView.Get(this).isMine)
         {
-            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posi��o: "+ _houseSelected.CurrentValue.name + " do tabuleiro.");
+            if (PaxTurnManager.Instance.isMyTurn())
+            {
+
+                PhotonView.Get(this).RPC("ToggleTurn", PhotonTargets.All);
+                int indexCard = _cardLibrary.cards.FindIndex(c => c == cardData);
+                PhotonView.Get(this).RPC("RenderCard", PhotonTargets.All, indexCard, _houseSelected.CurrentValue.tag);
+            }
+            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posi��o: " + _houseSelected.CurrentValue.name + " do tabuleiro.");
         }
     }
 
+    [PunRPC]
+    public void RenderCard(int indexCard, string houseTag)
+    {
+        CardData cardData = _cardLibrary.cards[indexCard];
+        HouseManager houseSelected = GameObject.FindGameObjectWithTag(houseTag).GetComponent<HouseManager>();
+        houseSelected.handleNewAction(cardData);
+
+    }
+
+    [PunRPC]
+    private void ToggleTurn()
+    {
+        PaxTurnManager.Instance.ToggleTurn();
+    }
     [PunRPC]
     private void ConsoleLog(string msg)
     {

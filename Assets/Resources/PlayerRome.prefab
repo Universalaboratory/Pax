@@ -80,3 +80,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c514a3f8ecfa9274a85ca502282ddf04, type: 2}
   _messageLog: {fileID: 3943622673075543673, guid: cce776dd65f5ba34ba71558025f9ebf9, type: 3}
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  _cardLibrary: {fileID: 11400000, guid: d6e4c73f71ec6ee4b868003b4231a0ad, type: 2}

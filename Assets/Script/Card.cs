@@ -15,6 +15,14 @@ public class Card : MonoBehaviour
         {
             GetComponent<Image>().sprite = cardData.sprite;
         }
+        if (PhotonNetwork.isMasterClient)
+        {
+            GetComponent<Image>().color = Color.blue;
+        }
+        else
+        {
+            GetComponent<Image>().color = Color.red;
+        }
     }
 
     public void CardSelected()

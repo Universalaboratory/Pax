@@ -6,7 +6,7 @@ public class CardMover : MonoBehaviour
     private Vector3 _startPosition;
     private Vector3 _startScale;
     private Card _card;
-    [SerializeField] private float _scaleFactor = 0.6f;
+    [SerializeField] private float _scaleFactor = 0.4f;
     [SerializeField] private bool _usedInTable = false;
     [SerializeField] private GameObjectVariable _houseSelected;
 
@@ -18,7 +18,7 @@ public class CardMover : MonoBehaviour
     }
     private void Update()
     {
-        if (_isMoving && !_usedInTable)
+        if (_isMoving && !_usedInTable && PaxTurnManager.Instance.isMyTurn())
         {
             Vector3 newPosition = Input.mousePosition;
             newPosition.z = transform.position.z;
@@ -55,6 +55,7 @@ public class CardMover : MonoBehaviour
     }
     public void OnMouseDownUI()
     {
+        if (!PaxTurnManager.Instance.isMyTurn()) return;
         transform.localScale = _startScale * _scaleFactor;
         _isMoving = true;
     }

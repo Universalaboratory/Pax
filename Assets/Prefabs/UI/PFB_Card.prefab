@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b5340070e327542a20292391a4ccc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scaleFactor: 0.6
+  _scaleFactor: 0.4
   _usedInTable: 0
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
 --- !u!114 &6387482081990497347
