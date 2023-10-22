@@ -27,4 +27,8 @@ public class HouseManager : MonoBehaviour
             //faz outra coisa
        }
     }
+    public CardData GetCardData()
+    {
+        return currentCardData;
+    }
 }

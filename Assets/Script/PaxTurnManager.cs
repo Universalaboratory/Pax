@@ -28,7 +28,6 @@ public class PaxTurnManager : PunBehaviour
         return _myTurn;
     }
 
-    [PunRPC]
     public void ToggleTurn()
     {
         _isMasterTurn = !_isMasterTurn;
@@ -41,6 +40,6 @@ public class PaxTurnManager : PunBehaviour
         {
             _myTurn = true;
         }
-        
+        WinManager.Instance.hasChampion();
     }
 }

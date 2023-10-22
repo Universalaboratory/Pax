@@ -5,6 +5,7 @@ using UnityEngine;
 public class CardConfig : ScriptableObject
 {
     public List<TileSpriteSetup> Tiles;
+    public CardType cardType;
 
     public TileSpriteSetup GetTile(string tag)
     {
@@ -18,4 +19,9 @@ public class TileSpriteSetup
 {
     public Sprite Sprite;
     public string TileTag;
+}
+
+public enum CardType{
+    ROMA,
+    GRECIA
 }

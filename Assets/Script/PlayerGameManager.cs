@@ -32,4 +32,8 @@ public class PlayerGameManager : PunBehaviour
         base.OnLeftRoom();
         SceneManager.LoadScene("Main");
     }
+    public void PlayerDisconnect()
+    {
+        PhotonNetwork.LeaveRoom();
+    }
 }
