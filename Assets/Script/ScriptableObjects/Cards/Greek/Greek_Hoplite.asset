@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471392040378b4c4d8c2ff91ace65e8a, type: 3}
   m_Name: Greek_Hoplite
   m_EditorClassIdentifier: 
-  name: 
+  cardName: 
   damage: 0
+  defense: 0
   type: 0
-  sprite: {fileID: 0}
+  cardId: 0
+  sprite: {fileID: 21300000, guid: df3d2745d4e25cd4caa73208d090da3c, type: 3}
+  cardSprites: []
+  cardConfig: {fileID: 11400000, guid: 6aa02706cc9db1b42ac0c44bd3a39b95, type: 2}

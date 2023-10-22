@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 438f148960c0625419b9e38fd3711450, type: 3}
-  m_Name: CardConfig1
+  m_Name: RomeCardConfig
   m_EditorClassIdentifier: 
   Tiles:
   - Sprite: {fileID: 21300000, guid: a9f6c8d01340f584eb08c144df3cb864, type: 3}

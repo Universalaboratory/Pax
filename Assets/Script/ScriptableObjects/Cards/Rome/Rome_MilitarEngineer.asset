@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471392040378b4c4d8c2ff91ace65e8a, type: 3}
   m_Name: Rome_MilitarEngineer
   m_EditorClassIdentifier: 
-  name: Engenheiro Militar Romano
+  cardName: 
   damage: 0
+  defense: 0
   type: 0
-  sprite: {fileID: 0}
+  cardId: 0
+  sprite: {fileID: 21300000, guid: 26160026946899d4f88b57815066cd3f, type: 3}
+  cardSprites: []
+  cardConfig: {fileID: 11400000, guid: ca16af46b0b0b0546b24bb0c2627b275, type: 2}
