@@ -6,6 +6,7 @@ public class Card : MonoBehaviour
 {
     public UnityAction<CardData> OnCardselected;
     public UnityAction<CardData, GameObject> OnCardUsed;
+    public UnityAction<Card> OnCardHovered;
     public CardData cardData;
 
     private void Start()
