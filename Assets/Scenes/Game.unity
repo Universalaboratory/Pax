@@ -171,6 +171,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &63863856
 Rigidbody2D:
   serializedVersion: 4
@@ -405,6 +413,7 @@ GameObject:
   - component: {fileID: 617576438}
   - component: {fileID: 617576440}
   - component: {fileID: 617576439}
+  - component: {fileID: 617576441}
   m_Layer: 5
   m_Name: Card 1
   m_TagString: Untagged
@@ -615,6 +624,50 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &617576441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617576433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d2f91e997d33c44a44adacc332fa41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 1756803773
+        Data2: 1118664457
+        Data3: 829958301
+        Data4: -325502346
+      Path: event:/Sfx/UI/Cards/Card_Hover
+  Select:
+    AudioReference:
+      Guid:
+        Data1: -1928191526
+        Data2: 1188584371
+        Data3: -1374008404
+        Data4: 1363977345
+      Path: event:/Sfx/UI/Cards/Card_Select
+  Use:
+    AudioReference:
+      Guid:
+        Data1: -1945940843
+        Data2: 1247491266
+        Data3: 1738434447
+        Data4: -592152983
+      Path: event:/Sfx/UI/Cards/Card_Use
+  Upgrade:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!1 &655004231
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +833,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &659627951
 Rigidbody2D:
   serializedVersion: 4
@@ -942,6 +1003,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &728251924
 Rigidbody2D:
   serializedVersion: 4
@@ -1104,6 +1173,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &789428694
 Rigidbody2D:
   serializedVersion: 4
@@ -1667,6 +1744,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!1 &1227236842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,6 +1800,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &1227236845
 Rigidbody2D:
   serializedVersion: 4
@@ -1969,6 +2062,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &1302542530
 Rigidbody2D:
   serializedVersion: 4
@@ -2450,6 +2551,7 @@ GameObject:
   - component: {fileID: 1643187578}
   - component: {fileID: 1643187580}
   - component: {fileID: 1643187579}
+  - component: {fileID: 1643187581}
   m_Layer: 5
   m_Name: Card 3
   m_TagString: Untagged
@@ -2660,6 +2762,50 @@ MonoBehaviour:
   _scaleFactor: 0.6
   _usedInTable: 0
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+--- !u!114 &1643187581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643187573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d2f91e997d33c44a44adacc332fa41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 1756803773
+        Data2: 1118664457
+        Data3: 829958301
+        Data4: -325502346
+      Path: event:/Sfx/UI/Cards/Card_Hover
+  Select:
+    AudioReference:
+      Guid:
+        Data1: -1928191526
+        Data2: 1188584371
+        Data3: -1374008404
+        Data4: 1363977345
+      Path: event:/Sfx/UI/Cards/Card_Select
+  Use:
+    AudioReference:
+      Guid:
+        Data1: -1945940843
+        Data2: 1247491266
+        Data3: 1738434447
+        Data4: -592152983
+      Path: event:/Sfx/UI/Cards/Card_Use
+  Upgrade:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!1 &1757651263
 GameObject:
   m_ObjectHideFlags: 0
@@ -2869,6 +3015,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &1931142202
 Rigidbody2D:
   serializedVersion: 4
@@ -3174,6 +3328,7 @@ GameObject:
   - component: {fileID: 2057275297}
   - component: {fileID: 2057275299}
   - component: {fileID: 2057275298}
+  - component: {fileID: 2057275300}
   m_Layer: 5
   m_Name: Card 2
   m_TagString: Untagged
@@ -3384,6 +3539,50 @@ MonoBehaviour:
   _scaleFactor: 0.6
   _usedInTable: 0
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+--- !u!114 &2057275300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057275292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d2f91e997d33c44a44adacc332fa41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 1756803773
+        Data2: 1118664457
+        Data3: 829958301
+        Data4: -325502346
+      Path: event:/Sfx/UI/Cards/Card_Hover
+  Select:
+    AudioReference:
+      Guid:
+        Data1: -1928191526
+        Data2: 1188584371
+        Data3: -1374008404
+        Data4: 1363977345
+      Path: event:/Sfx/UI/Cards/Card_Select
+  Use:
+    AudioReference:
+      Guid:
+        Data1: -1945940843
+        Data2: 1247491266
+        Data3: 1738434447
+        Data4: -592152983
+      Path: event:/Sfx/UI/Cards/Card_Use
+  Upgrade:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!1 &2067730635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3432,6 +3631,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &2067730638
 Rigidbody2D:
   serializedVersion: 4
