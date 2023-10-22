@@ -9,7 +9,7 @@ public class PlayerCommands : PunBehaviour
 
     private Transform _logParent;
     [SerializeField] private GameObject _messageLog;
-
+    [SerializeField] private GameObjectVariable _houseSelected;
     private void Start()
     {
         _logParent = GameObject.FindGameObjectWithTag("LogParent").transform;
@@ -54,7 +54,7 @@ public class PlayerCommands : PunBehaviour
     {
         if (PhotonView.Get(this).isMine)
         {
-            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posi��o: "+ gameObject.name + " do tabuleiro.");
+            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posi��o: "+ _houseSelected.CurrentValue.name + " do tabuleiro.");
         }
     }
 
