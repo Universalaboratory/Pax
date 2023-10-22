@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuEvents : MonoBehaviour
 {
@@ -35,10 +37,16 @@ public class MainMenuEvents : MonoBehaviour
 
     public void OnClickNewGame()
     {
-        // Load multiplayer hall Scene
+        StartCoroutine("LoadGameHall");
     }
 
-    public void OnClickOptions()
+    IEnumerator LoadGameHall()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        SceneManager.LoadScene(1);
+    }
+
+    public void OnClickSettings()
     {
         // Load Options Scene
     }
