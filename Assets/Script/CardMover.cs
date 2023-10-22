@@ -24,7 +24,7 @@ public class CardMover : MonoBehaviour
             newPosition.z = transform.position.z;
             transform.position = newPosition;
 
-            // Verifica se o botão do mouse foi solto para parar o movimento
+            // Verifica se o botï¿½o do mouse foi solto para parar o movimento
             if (Input.GetMouseButtonUp(0))
             {
                 _isMoving = false;
@@ -45,12 +45,13 @@ public class CardMover : MonoBehaviour
     }
     public void OnMouseEnterUI()
     {
-        Debug.Log("Entrou na UI, caso queira adicionar algum efeito é aqui");
+        _card.OnCardHovered.Invoke(_card);
+        Debug.Log("Entrou na UI, caso queira adicionar algum efeito ï¿½ aqui");
     }
 
     public void OnMouseExitUI()
     {
-        Debug.Log("Entrou na UI, caso queira remover algum efeito é aqui");
+        Debug.Log("Entrou na UI, caso queira remover algum efeito ï¿½ aqui");
     }
     public void OnMouseDownUI()
     {
