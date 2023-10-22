@@ -47,4 +47,6 @@ MonoBehaviour:
   - LoadScene
   - consoleLog
   - ConsoleLog
+  - ToggleTurn
+  - RenderCard
   DisableAutoOpenWizard: 1
