@@ -1,20 +1,36 @@
 using UnityEngine;
-[RequireComponent (typeof(Card))]
+[RequireComponent(typeof(Card))]
 public class CardMover : MonoBehaviour
 {
     private bool _isMoving;
     private Vector3 _startPosition;
     private Vector3 _startScale;
     private Card _card;
-    [SerializeField] private float _scaleFactor = 0.4f;
+    [SerializeField] private float _selectedScaleFactor = 0.6f;
     [SerializeField] private bool _usedInTable = false;
     [SerializeField] private GameObjectVariable _houseSelected;
+    private CardDeck _deck;
 
-    private void Start()
+    private void Awake()
     {
-        _card = GetComponent<Card> ();
+        _card = GetComponent<Card>();
         _startPosition = transform.position;
         _startScale = transform.localScale;
+    }
+    private void Start()
+    {
+
+
+    }
+
+    private void OnEnable()
+    {
+        ResetPostion();
+    }
+
+    public void SetDeck(CardDeck deck)
+    {
+        _deck = deck;
     }
     private void Update()
     {
@@ -30,33 +46,47 @@ public class CardMover : MonoBehaviour
                 _isMoving = false;
                 if (_houseSelected.CurrentValue == null)
                 {
-                    transform.position = _startPosition;
-                    transform.localScale = _startScale;
+                    ResetPostion();
                 }
-                else
+                else if (_houseSelected.CurrentValue.TryGetComponent(out HouseManager house))
                 {
-                    transform.position = Camera.main.WorldToScreenPoint(_houseSelected.CurrentValue.transform.position);
-                    _usedInTable = true;
+                    if (_deck.Deck.Contains(house.CurrentCard))
+                    {
+                        ResetPostion();
+                    }
+                    else
+                    {
+                        transform.position = Camera.main.WorldToScreenPoint(_houseSelected.CurrentValue.transform.position);
+                        _usedInTable = true;
+                        _card.OnCardUsed.Invoke(_card.cardData, this.gameObject);
+                        _card.gameObject.SetActive(false);
+                    }
 
-                    _card.OnCardUsed.Invoke(_card.cardData, this.gameObject);
                 }
             }
         }
     }
+
+    private void ResetPostion()
+    {
+        transform.position = _startPosition;
+        transform.localScale = _startScale;
+    }
+
     public void OnMouseEnterUI()
     {
         _card.OnCardHovered.Invoke(_card);
-        Debug.Log("Entrou na UI, caso queira adicionar algum efeito � aqui");
+        
     }
 
     public void OnMouseExitUI()
     {
-        Debug.Log("Entrou na UI, caso queira remover algum efeito � aqui");
+        
     }
     public void OnMouseDownUI()
     {
         if (!PaxTurnManager.Instance.isMyTurn()) return;
-        transform.localScale = _startScale * _scaleFactor;
+        transform.localScale = _startScale * _selectedScaleFactor;
         _isMoving = true;
     }
 }

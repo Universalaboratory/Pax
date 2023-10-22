@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471392040378b4c4d8c2ff91ace65e8a, type: 3}
   m_Name: Card2
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Greek 2
   damage: 20
   defense: 0
   type: 1
-  cardId: 0
   sprite: {fileID: 0}
-  cardSprites: []
   cardConfig: {fileID: 11400000, guid: 6aa02706cc9db1b42ac0c44bd3a39b95, type: 2}
+  Soldiers: {fileID: 0}
