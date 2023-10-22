@@ -195,7 +195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5674429982026592920, guid: 8a0478331be10ec47ac870d1cc944630, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 218.54489
       objectReference: {fileID: 0}
     - target: {fileID: 5674429982026592920, guid: 8a0478331be10ec47ac870d1cc944630, type: 3}
       propertyPath: m_SizeDelta.y
@@ -251,12 +251,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113306998018840504, guid: 8a0478331be10ec47ac870d1cc944630, type: 3}
       propertyPath: m_Name
-      value: OptionsButton
+      value: SettingsButton
       objectReference: {fileID: 0}
     - target: {fileID: 8533293268493258133, guid: 8a0478331be10ec47ac870d1cc944630, type: 3}
       propertyPath: ButtonType
       value: 
-      objectReference: {fileID: 11400000, guid: ef7ff96259710a441b6dd149d656f72c, type: 2}
+      objectReference: {fileID: 11400000, guid: 726e41fb1377d9b4dbb381d6411dd759, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -398,7 +398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22560482, y: 0}
   m_AnchorMax: {x: 0.7471317, y: 1}
-  m_AnchoredPosition: {x: -1.2467041, y: -1.175003}
+  m_AnchoredPosition: {x: 207, y: -52}
   m_SizeDelta: {x: -411.0227, y: -289.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1163367909
@@ -442,7 +442,7 @@ MonoBehaviour:
   playButton: {fileID: 2048640226}
   exitButton: {fileID: 1684609543}
   newGameButton: {fileID: 442904337}
-  optionsButton: {fileID: 626761464}
+  settingsButton: {fileID: 626761464}
   backButton: {fileID: 42413368}
 --- !u!1001 &1254261001
 PrefabInstance:
@@ -841,7 +841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c0a96bea3c06d704b8d58ba9d3d6202e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 086c42dceb2692f4ab60139b6c1a6e8a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

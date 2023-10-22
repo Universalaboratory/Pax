@@ -6,13 +6,13 @@ public class MainMenuEvents : MonoBehaviour
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject exitButton;
     [SerializeField] private GameObject newGameButton;
-    [SerializeField] private GameObject optionsButton;
+    [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject backButton;
 
     private void Start()
     {
         newGameButton.SetActive(false);
-        optionsButton.SetActive(false);
+        settingsButton.SetActive(false);
         backButton.SetActive(false);
     }
 
@@ -21,7 +21,7 @@ public class MainMenuEvents : MonoBehaviour
         playButton.SetActive(false);
         exitButton.SetActive(false);
         newGameButton.SetActive(true);
-        optionsButton.SetActive(true);
+        settingsButton.SetActive(true);
         backButton.SetActive(true);
     }
 
@@ -48,7 +48,7 @@ public class MainMenuEvents : MonoBehaviour
         playButton.SetActive(true);
         exitButton.SetActive(true);
         newGameButton.SetActive(false);
-        optionsButton.SetActive(false);
+        settingsButton.SetActive(false);
         backButton.SetActive(false);
     }
 }
