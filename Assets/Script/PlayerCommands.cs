@@ -29,18 +29,20 @@ public class PlayerCommands : PunBehaviour
             card.OnCardUsed += HandleCardUsed;
         }
     }
+
     private void Update()
     {
-        //se aperto espaço e esse script é do meu personagem, então envio a mensagem para todos os outros jogadores(inclusive pra mim)
+        //se aperto espaï¿½o e esse script ï¿½ do meu personagem, entï¿½o envio a mensagem para todos os outros jogadores(inclusive pra mim)
         if (Input.GetKeyUp(KeyCode.Space))
         {
             if (PhotonView.Get(this).isMine)
             {
-                PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, "Olá pessoal, sou o master?: " + PhotonNetwork.isMasterClient);
+                PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, "Olï¿½ pessoal, sou o master?: " + PhotonNetwork.isMasterClient);
             }
         }
     }
-    //aqui faço a RPC da carta selecionada
+    
+    //aqui faï¿½o a RPC da carta selecionada
     public void HandleCard(CardData cardData)
     {
         if (PhotonView.Get(this).isMine)
@@ -52,7 +54,7 @@ public class PlayerCommands : PunBehaviour
     {
         if (PhotonView.Get(this).isMine)
         {
-            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posição: "+ gameObject.name + " do tabuleiro.");
+            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posiï¿½ï¿½o: "+ gameObject.name + " do tabuleiro.");
         }
     }
 
