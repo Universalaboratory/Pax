@@ -189,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4925022118667274013}
   - component: {fileID: 2597103920914050666}
-  - component: {fileID: 4273191180311736027}
+  - component: {fileID: 2548702443403509347}
   - component: {fileID: 5382910017452051630}
   - component: {fileID: 2290945693470665419}
   - component: {fileID: 2521142235035032843}
@@ -224,7 +224,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3944524910435075778}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -269,8 +269,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4273191180311736027
-CircleCollider2D:
+--- !u!61 &2548702443403509347
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -301,9 +301,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.00000011920929}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Size: {x: 1.39, y: 1}
+  m_EdgeRadius: 0
 --- !u!50 &5382910017452051630
 Rigidbody2D:
   serializedVersion: 4
@@ -379,6 +389,22 @@ MonoBehaviour:
   LoseColor: {r: 0.990566, g: 0.40650588, b: 0.40650588, a: 1}
   AnimationDuration: 0.5
   FadeDuration: 0.1
+  VictorySound:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
+  LoseSound:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!1 &5237776146746547998
 GameObject:
   m_ObjectHideFlags: 0

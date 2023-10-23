@@ -4,6 +4,7 @@ using Photon;
 using System;
 using ExitGames.Client.Photon.StructWrapping;
 using UnityEngine.XR;
+using System.Collections;
 
 //Responsavel por Executar comandos simples
 public class PlayerCommands : PunBehaviour
@@ -77,8 +78,8 @@ public class PlayerCommands : PunBehaviour
                 CardDeck deck = _cardLibrary.Decks.Find(d => d.Deck.Contains(cardData));
                 int deckIndex = _cardLibrary.Decks.IndexOf(deck);
                 int indexCard = deck.Deck.FindIndex(c => c == cardData);
-               PhotonView.Get(this).RPC("RenderCard", PhotonTargets.All, indexCard, deckIndex, _houseSelected.CurrentValue.tag);
 
+                PhotonView.Get(this).RPC("RenderCard", PhotonTargets.All, indexCard, deckIndex, _houseSelected.CurrentValue.tag);
             }
             //PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posi��o: " + _houseSelected.CurrentValue.name + " do tabuleiro.");
         }
@@ -113,9 +114,27 @@ public class PlayerCommands : PunBehaviour
         if (!PaxTurnManager.Instance.isMyTurn())
         {
             _hand.DrawCard();
+
         }
+        StartCoroutine(TestEnd());
         PaxTurnManager.Instance.ToggleTurn();
     }
+
+    private IEnumerator TestEnd()
+    {
+        yield return new WaitForEndOfFrame();
+        if (!_hand.HasCard())
+        {
+            PhotonView.Get(this).RPC("ShowWinner", PhotonTargets.All, _hand.CardDeck.Deck[0].cardConfig.cardType == CardType.GRECIA ? CardType.ROMA.ToString() : CardType.GRECIA.ToString());
+        }
+    }
+
+    [PunRPC]
+    private void ShowWinner(string winner)
+    {
+        WinManager.Instance.ShowWinner(winner);
+    }
+
 
     [PunRPC]
     private void ConsoleLog(string msg)

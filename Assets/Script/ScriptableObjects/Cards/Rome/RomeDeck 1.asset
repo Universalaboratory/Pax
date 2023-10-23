@@ -10,18 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42c781f7b7612574b86df4c4f8a92463, type: 3}
-  m_Name: RomeDeck
+  m_Name: RomeDeck 1
   m_EditorClassIdentifier: 
   Deck:
   - {fileID: 11400000, guid: 7781830aa70de054c82b8605cccf6387, type: 2}
   - {fileID: 11400000, guid: 4a68f4f019572f344b34ebfd6f1dda7f, type: 2}
   - {fileID: 11400000, guid: fd00b118c70499a46a6012ae20c83c94, type: 2}
-  - {fileID: 11400000, guid: d84f226ef6fef744f81e4e56435e8b56, type: 2}
-  - {fileID: 11400000, guid: c514a3f8ecfa9274a85ca502282ddf04, type: 2}
-  - {fileID: 11400000, guid: 7781830aa70de054c82b8605cccf6387, type: 2}
-  - {fileID: 11400000, guid: 4a68f4f019572f344b34ebfd6f1dda7f, type: 2}
-  - {fileID: 11400000, guid: fd00b118c70499a46a6012ae20c83c94, type: 2}
-  - {fileID: 11400000, guid: d84f226ef6fef744f81e4e56435e8b56, type: 2}
-  - {fileID: 11400000, guid: c514a3f8ecfa9274a85ca502282ddf04, type: 2}
   DeckName: Roman
   DeckImage: {fileID: 21300000, guid: 582bc7f3c994ed8428180fdcf6e18973, type: 3}

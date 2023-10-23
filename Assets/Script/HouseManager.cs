@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using Sunflyer.Audio;
+using FMOD.Studio;
 
 public class HouseManager : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class HouseManager : MonoBehaviour
 
     private void Start()
     {
-        sprHouse = GetComponentInChildren<SpriteRenderer>();
+       // sprHouse = GetComponentInChildren<SpriteRenderer>();
     }
 
     internal void handleNewAction(CardData card)
@@ -58,7 +59,8 @@ public class HouseManager : MonoBehaviour
 
         if (card.Soldiers)
         {
-            _soldiers = Instantiate(card.Soldiers, transform);
+            _soldiers = Instantiate(card.Soldiers);
+            _soldiers.transform.position = transform.position;
         }
 
     }
