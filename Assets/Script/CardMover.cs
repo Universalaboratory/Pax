@@ -72,7 +72,7 @@ public class CardMover : MonoBehaviour
                     {
                         transform.position = Camera.main.WorldToScreenPoint(_houseSelected.CurrentValue.transform.position);
                         _usedInTable = true;
-                        _card.OnCardUsed.Invoke(_card.cardData, this.gameObject);
+                        _card.OnCardUsed.Invoke(_card.cardData, house.gameObject);
                         _card.gameObject.SetActive(false);
                     }
 

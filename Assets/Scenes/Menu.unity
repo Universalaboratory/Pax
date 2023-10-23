@@ -322,6 +322,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1215172675775368928, guid: 031ce2e9b8327bb4aaa9e76d8b0613e6, type: 3}
+      propertyPath: Audio.AudioReference.Path
+      value: event:/MUSIC/Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215172675775368928, guid: 031ce2e9b8327bb4aaa9e76d8b0613e6, type: 3}
+      propertyPath: Audio.AudioReference.Guid.Data1
+      value: 688376796
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215172675775368928, guid: 031ce2e9b8327bb4aaa9e76d8b0613e6, type: 3}
+      propertyPath: Audio.AudioReference.Guid.Data2
+      value: 1261086789
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215172675775368928, guid: 031ce2e9b8327bb4aaa9e76d8b0613e6, type: 3}
+      propertyPath: Audio.AudioReference.Guid.Data3
+      value: -1922954094
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215172675775368928, guid: 031ce2e9b8327bb4aaa9e76d8b0613e6, type: 3}
+      propertyPath: Audio.AudioReference.Guid.Data4
+      value: 471506451
+      objectReference: {fileID: 0}
     - target: {fileID: 2254684041810929731, guid: 031ce2e9b8327bb4aaa9e76d8b0613e6, type: 3}
       propertyPath: m_Name
       value: MusicPlayer
