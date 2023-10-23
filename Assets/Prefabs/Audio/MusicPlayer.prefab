@@ -47,11 +47,11 @@ MonoBehaviour:
   Audio:
     AudioReference:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+        Data1: -1925543066
+        Data2: 1189332096
+        Data3: -650616671
+        Data4: -1998976216
+      Path: event:/MUSIC/Gameplay
     UseAudioInstance: 1
     Parameters: []
     StopMode: 0

@@ -31,3 +31,4 @@ MonoBehaviour:
     TileTag: 32
   - Sprite: {fileID: 21300000, guid: ae358dc20fb4cfd4cb1fc09178d5abd9, type: 3}
     TileTag: 33
+  cardType: 1
