@@ -143,7 +143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3524972645452894155, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3524972645452894155, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_LocalPosition.x
@@ -179,7 +179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3524972645452894155, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3524972645452894155, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -195,7 +195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_fontSize
-      value: 26.85
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_fontColor.b
@@ -210,12 +210,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_HorizontalAlignment

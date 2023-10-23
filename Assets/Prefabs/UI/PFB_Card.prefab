@@ -85,20 +85,8 @@ PrefabInstance:
       value: Card 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_fontSizeMax
       value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8640519017333908825, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_Pivot.x
@@ -196,7 +184,13 @@ PrefabInstance:
       addedObject: {fileID: 6387482081990497347}
     - targetCorrespondingSourceObject: {fileID: 3859069734970569673, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 580804694828418588}
+    - targetCorrespondingSourceObject: {fileID: 3859069734970569673, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 4502275225186849131}
+    - targetCorrespondingSourceObject: {fileID: 3859069734970569673, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7812410260384527043}
   m_SourcePrefab: {fileID: 100100000, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
 --- !u!1 &7881951921808978735 stripped
 GameObject:
@@ -294,6 +288,19 @@ MonoBehaviour:
         Data3: 1868049051
         Data4: 1470602888
       Path: event:/Sfx/UI/Button/Button_Back
+--- !u!114 &580804694828418588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881951921808978735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8bb30c3c4416344ba4d7b97d1403cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardText: {fileID: 0}
 --- !u!114 &4502275225186849131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,3 +374,45 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!23 &-7812410260384527043
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881951921808978735}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
