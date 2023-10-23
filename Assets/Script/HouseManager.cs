@@ -86,4 +86,8 @@ public class HouseManager : MonoBehaviour
     {
         AttributeText.text = $"Defense: {card.defense}";
     }
+    public CardData GetCardData()
+    {
+        return currentCardData;
+    }
 }
