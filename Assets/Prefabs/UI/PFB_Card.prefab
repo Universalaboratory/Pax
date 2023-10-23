@@ -85,8 +85,28 @@ PrefabInstance:
       value: Card 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_fontSizeMax
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8640519017333908825, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_Pivot.x
@@ -192,6 +212,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -7812410260384527043}
   m_SourcePrefab: {fileID: 100100000, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+--- !u!114 &3206879089732397597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8389473229439281915, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+  m_PrefabInstance: {fileID: 6407631581724279014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881951921808978735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7881951921808978735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3859069734970569673, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
@@ -210,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: 8b428ea0206f3dd4a9df5ee06c0d2e02, type: 2}
+  info: {fileID: 580804694828418588}
 --- !u!114 &6942593737221555582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b5340070e327542a20292391a4ccc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scaleFactor: 0.4
+  _selectedScaleFactor: 0.6
   _usedInTable: 0
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
 --- !u!114 &6387482081990497347
@@ -288,6 +320,22 @@ MonoBehaviour:
         Data3: 1868049051
         Data4: 1470602888
       Path: event:/Sfx/UI/Button/Button_Back
+  Win:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
+  Lose:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!114 &580804694828418588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8bb30c3c4416344ba4d7b97d1403cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardText: {fileID: 0}
+  cardImage: {fileID: 3206879089732397597}
 --- !u!114 &4502275225186849131
 MonoBehaviour:
   m_ObjectHideFlags: 0

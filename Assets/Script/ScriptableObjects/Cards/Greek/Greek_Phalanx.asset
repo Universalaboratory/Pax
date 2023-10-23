@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471392040378b4c4d8c2ff91ace65e8a, type: 3}
   m_Name: Greek_Phalanx
   m_EditorClassIdentifier: 
-  cardName: 
-  damage: 0
-  defense: 0
+  cardName: Phalanx
+  damage: 1
+  defense: 2
   type: 1
-  sprite: {fileID: 21300000, guid: df3d2745d4e25cd4caa73208d090da3c, type: 3}
+  sprite: {fileID: 21300000, guid: a55c1cc453ed67b479682a7889d8b701, type: 3}
   cardConfig: {fileID: 11400000, guid: 08a56ff6ad2a6eb439bd37d7dfc860b6, type: 2}
   Soldiers: {fileID: 624353356314315248, guid: 0cd0c5c70192e7d44915591ada563162, type: 3}

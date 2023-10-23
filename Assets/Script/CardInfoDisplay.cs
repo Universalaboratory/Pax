@@ -7,21 +7,24 @@ using TMPro;
 public class CardInfoDisplay : MonoBehaviour
 {
     private CardData cardData;
-
+    private Card card;
     private TextMeshProUGUI cardText;
-    private Image cardImage;
+    [SerializeField] private Image cardImage;
 
     private void Awake()
     {
         cardText = GetComponentInChildren<TextMeshProUGUI>();
-        cardImage = GetComponent<Image>();
     }
 
     private void Start()
     {
-        cardData = GetComponent<Card>().cardData;
+        card = GetComponent<Card>();
+        UpdateUI();
+    }
 
-        cardText.text = $"{cardData.name} \nAtaque: {cardData.damage} \nDefesa: {cardData.defense}";
-        cardImage.sprite = cardData.sprite;
+    public void UpdateUI()
+    {
+        cardText.text = $"{card.cardData.cardName} \nAtaque: {card.cardData.damage} \nDefesa: {card.cardData.defense}";
+        cardImage.sprite = card.cardData.sprite;
     }
 }

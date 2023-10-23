@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471392040378b4c4d8c2ff91ace65e8a, type: 3}
   m_Name: Rome_MilitarEngineer
   m_EditorClassIdentifier: 
-  cardName: 
-  damage: 0
-  defense: 0
+  cardName: MillitarEngineer
+  damage: 1
+  defense: 2
   type: 1
-  sprite: {fileID: 21300000, guid: 26160026946899d4f88b57815066cd3f, type: 3}
+  sprite: {fileID: 21300000, guid: 1139cd65d2178aa4cbd11b73a35f9203, type: 3}
   cardConfig: {fileID: 11400000, guid: ca16af46b0b0b0546b24bb0c2627b275, type: 2}
   Soldiers: {fileID: 4007522727799150728, guid: 7b32a52bac8b80c41a053ac9996d9164, type: 3}

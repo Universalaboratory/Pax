@@ -9,7 +9,7 @@ namespace Sunflyer.Audio
     {
         [SerializeField] private string Parameter = "Action";
         [SerializeField] private AudioInstanceReference Select, Use;
-        [SerializeField] private AudioPlayer Hover, Upgrade, Return;
+        [SerializeField] private AudioPlayer Hover, Upgrade, Return, Win, Lose;
         private Card _card;
 
         private void Awake()
@@ -38,7 +38,17 @@ namespace Sunflyer.Audio
             if (target.TryGetComponent(out HouseManager house))
             {
                 if (house.CurrentCard)
+                {
+                    if (house.CurrentCard.defense > cardData.damage)
+                    {
+                        Lose.PlayAudio();
+                    }
+                    else
+                    {
+                        Win.PlayAudio();
+                    }
                     return;
+                }
             }
             Use.PlayAudio();
         }
