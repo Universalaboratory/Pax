@@ -72,4 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf7e02080245c34f93ae4aeaa0a88c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cardsData: []
   _messageLog: {fileID: 3943622673075543673, guid: cce776dd65f5ba34ba71558025f9ebf9, type: 3}
+  _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  _cardLibrary: {fileID: 11400000, guid: d6e4c73f71ec6ee4b868003b4231a0ad, type: 2}

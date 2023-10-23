@@ -5,4 +5,5 @@ using UnityEngine;
 public class CardLibrary : ScriptableObject
 {
     public List<CardData> cards;
+    public List<CardDeck> Decks;
 }

@@ -95,7 +95,7 @@ MonoBehaviour:
   m_fontSize: 28
   m_fontSizeBase: 28
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 232125160743002866}
   - component: {fileID: 1736359201216806648}
   - component: {fileID: 8533293268493258133}
+  - component: {fileID: 3272297022322534087}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -269,3 +270,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonType: {fileID: 0}
+--- !u!114 &3272297022322534087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7113306998018840504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e85e418e2d7ef54e8310f158dafcb4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickAudio:
+    AudioReference:
+      Guid:
+        Data1: -1234499590
+        Data2: 1117996997
+        Data3: 1635680133
+        Data4: -1648958910
+      Path: event:/Sfx/UI/Button/Button_Select
+  HoverAudio:
+    AudioReference:
+      Guid:
+        Data1: 1253151230
+        Data2: 1210345216
+        Data3: 397088947
+        Data4: 2101446867
+      Path: event:/Sfx/UI/Button/Button_Hover

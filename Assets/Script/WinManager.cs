@@ -41,11 +41,12 @@ public class WinManager : MonoBehaviour
         string text = winner + " Venceu!!";
         textoResultado.text = text;
         resultGo.SetActive(true);
+        _hasChampion = true;
     }
 
     private void FixedUpdate()
     {
-        if(!_hasChampion)
+        if (!_hasChampion)
         {
             hasChampion();
         }
@@ -57,18 +58,14 @@ public class WinManager : MonoBehaviour
 
         if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
         {
-            string text = CardType.ROMA.ToString() + " Venceu!!";
-            textoResultado.text = text;
-            resultGo.SetActive(true);
+            ShowWinner(CardType.ROMA.ToString());
         }
 
         cardType = CardType.GRECIA;
 
         if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
         {
-            string text = CardType.GRECIA.ToString() + " Venceu!!";
-            textoResultado.text = text;
-            resultGo.SetActive(true);
+            ShowWinner(CardType.GRECIA.ToString());
         }
     }
 
@@ -128,8 +125,8 @@ public class WinManager : MonoBehaviour
         if (
             (topLine[0].GetCardData()?.cardConfig.cardType == cardType &&
              centerLine[1].GetCardData()?.cardConfig.cardType == cardType &&
-             bottomLine[2].GetCardData()?.cardConfig.cardType == cardType) 
-             
+             bottomLine[2].GetCardData()?.cardConfig.cardType == cardType)
+
              ||
             (topLine[2].GetCardData()?.cardConfig.cardType == cardType &&
              centerLine[1].GetCardData()?.cardConfig.cardType == cardType &&

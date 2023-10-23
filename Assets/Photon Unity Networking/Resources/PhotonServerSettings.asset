@@ -49,4 +49,6 @@ MonoBehaviour:
   - ConsoleLog
   - ToggleTurn
   - RenderCard
+  - SetupDeck
+  - ShowWinner
   DisableAutoOpenWizard: 1

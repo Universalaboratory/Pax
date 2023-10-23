@@ -23,6 +23,7 @@ public class Card : MonoBehaviour
         {
             GetComponent<Image>().color = Color.red;
         }
+
     }
 
     public void CardSelected()

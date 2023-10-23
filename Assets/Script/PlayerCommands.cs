@@ -3,13 +3,15 @@ using UnityEngine;
 using Photon;
 using System;
 using ExitGames.Client.Photon.StructWrapping;
+using UnityEngine.XR;
+using System.Collections;
 
 //Responsavel por Executar comandos simples
 public class PlayerCommands : PunBehaviour
 {
-    [SerializeField]private CardData[] _cardsData;
+    [SerializeField] private CardData[] _cardsData;
     private Card[] _cards;
-
+    private CardHand _hand;
     private Transform _logParent;
     [SerializeField] private GameObject _messageLog;
     [SerializeField] private GameObjectVariable _houseSelected;
@@ -19,11 +21,21 @@ public class PlayerCommands : PunBehaviour
     {
         _logParent = GameObject.FindGameObjectWithTag("LogParent").transform;
         _cards = GameObject.FindObjectsOfType<Card>();
+
         foreach (Card card in _cards)
         {
             card.OnCardselected += HandleCard;
             card.OnCardUsed += HandleCardUsed;
         }
+
+        _hand = FindObjectOfType<CardHand>();
+
+        if (PhotonNetwork.isMasterClient)
+        {
+            int setDeck = UnityEngine.Random.Range(0, 2);
+            PhotonView.Get(this).RPC("SetupDeck", PhotonTargets.All, setDeck);
+        }
+
     }
 
     private void OnDisable()
@@ -46,7 +58,7 @@ public class PlayerCommands : PunBehaviour
             }
         }
     }
-    
+
     //aqui fa�o a RPC da carta selecionada
     public void HandleCard(CardData cardData)
     {
@@ -63,32 +75,72 @@ public class PlayerCommands : PunBehaviour
             {
 
                 PhotonView.Get(this).RPC("ToggleTurn", PhotonTargets.All);
-                int indexCard = _cardLibrary.cards.FindIndex(c => c == cardData);
-                PhotonView.Get(this).RPC("RenderCard", PhotonTargets.All, indexCard, _houseSelected.CurrentValue.tag);
+                CardDeck deck = _cardLibrary.Decks.Find(d => d.Deck.Contains(cardData));
+                int deckIndex = _cardLibrary.Decks.IndexOf(deck);
+                int indexCard = deck.Deck.FindIndex(c => c == cardData);
+
+                PhotonView.Get(this).RPC("RenderCard", PhotonTargets.All, indexCard, deckIndex, _houseSelected.CurrentValue.tag);
             }
-            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posi��o: " + _houseSelected.CurrentValue.name + " do tabuleiro.");
+            //PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posi��o: " + _houseSelected.CurrentValue.name + " do tabuleiro.");
         }
     }
 
     [PunRPC]
-    public void RenderCard(int indexCard, string houseTag)
+    public void RenderCard(int indexCard, int deckIndex, string houseTag)
     {
-        CardData cardData = _cardLibrary.cards[indexCard];
+        CardDeck deck = _cardLibrary.Decks[deckIndex];
+        CardData cardData = deck.Deck[indexCard];
         HouseManager houseSelected = GameObject.FindGameObjectWithTag(houseTag).GetComponent<HouseManager>();
         houseSelected.handleNewAction(cardData);
 
     }
 
     [PunRPC]
+    public void SetupDeck(int deckIndex)
+    {
+        if (PhotonNetwork.isMasterClient)
+        {
+            _hand.ReceiveDeck(_cardLibrary.Decks[deckIndex]);
+        }
+        else
+        {
+            _hand.ReceiveDeck(_cardLibrary.Decks[deckIndex == 0 ? 1 : 0]);
+        }
+    }
+
+    [PunRPC]
     private void ToggleTurn()
     {
+        if (!PaxTurnManager.Instance.isMyTurn())
+        {
+            _hand.DrawCard();
+
+        }
+        StartCoroutine(TestEnd());
         PaxTurnManager.Instance.ToggleTurn();
     }
+
+    private IEnumerator TestEnd()
+    {
+        yield return new WaitForEndOfFrame();
+        if (!_hand.HasCard())
+        {
+            PhotonView.Get(this).RPC("ShowWinner", PhotonTargets.All, _hand.CardDeck.Deck[0].cardConfig.cardType == CardType.GRECIA ? CardType.ROMA.ToString() : CardType.GRECIA.ToString());
+        }
+    }
+
+    [PunRPC]
+    private void ShowWinner(string winner)
+    {
+        WinManager.Instance.ShowWinner(winner);
+    }
+
+
     [PunRPC]
     private void ConsoleLog(string msg)
     {
-        GameObject go = Instantiate(_messageLog);
-        go.GetComponent<TMPro.TMP_Text>().text = msg;
-        go.transform.SetParent(_logParent);
+        // GameObject go = Instantiate(_messageLog);
+        // go.GetComponent<TMPro.TMP_Text>().text = msg;
+        // go.transform.SetParent(_logParent);
     }
 }

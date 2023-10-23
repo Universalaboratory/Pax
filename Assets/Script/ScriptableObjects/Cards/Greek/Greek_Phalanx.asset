@@ -15,8 +15,7 @@ MonoBehaviour:
   cardName: 
   damage: 0
   defense: 0
-  type: 0
-  cardId: 0
+  type: 1
   sprite: {fileID: 21300000, guid: df3d2745d4e25cd4caa73208d090da3c, type: 3}
-  cardSprites: []
-  cardConfig: {fileID: 11400000, guid: 6aa02706cc9db1b42ac0c44bd3a39b95, type: 2}
+  cardConfig: {fileID: 11400000, guid: 08a56ff6ad2a6eb439bd37d7dfc860b6, type: 2}
+  Soldiers: {fileID: 624353356314315248, guid: 0cd0c5c70192e7d44915591ada563162, type: 3}
