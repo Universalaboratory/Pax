@@ -35,6 +35,11 @@ namespace Sunflyer.Audio
 
         private void OnCardUsed(CardData cardData, GameObject target)
         {
+            if (target.TryGetComponent(out HouseManager house))
+            {
+                if (house.CurrentCard)
+                    return;
+            }
             Use.PlayAudio();
         }
 

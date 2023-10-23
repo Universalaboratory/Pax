@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Sunflyer.Audio;
 
 public class HouseManager : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class HouseManager : MonoBehaviour
     [SerializeField] private string WinMessage = "Won Against", LoseMessage = "Lost Against";
     [SerializeField] private Color WinColor = Color.green, LoseColor = Color.red;
     [SerializeField] private float AnimationDuration = .5f, FadeDuration = .1f;
-
+    [SerializeField] private AudioPlayer VictorySound, LoseSound;
     private GameObject _soldiers;
 
     private void Start()

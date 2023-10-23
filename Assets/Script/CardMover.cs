@@ -10,23 +10,36 @@ public class CardMover : MonoBehaviour
     [SerializeField] private bool _usedInTable = false;
     [SerializeField] private GameObjectVariable _houseSelected;
     private CardDeck _deck;
+    private bool _hasStup;
 
     private void Awake()
     {
         _card = GetComponent<Card>();
-        _startPosition = transform.position;
-        _startScale = transform.localScale;
+
+
     }
     private void Start()
     {
-
+        if (!_hasStup)
+        {
+            _startPosition = transform.position;
+            _startScale = transform.localScale;
+            _hasStup = true;
+        }
 
     }
 
     private void OnEnable()
     {
+        if (!_hasStup)
+        {
+            _startPosition = transform.position;
+            _startScale = transform.localScale;
+            _hasStup = true;
+        }
         ResetPostion();
         _usedInTable = false;
+        _isMoving = false;
     }
 
     public void SetDeck(CardDeck deck)

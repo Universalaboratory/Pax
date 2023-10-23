@@ -77,10 +77,10 @@ public class PlayerCommands : PunBehaviour
                 CardDeck deck = _cardLibrary.Decks.Find(d => d.Deck.Contains(cardData));
                 int deckIndex = _cardLibrary.Decks.IndexOf(deck);
                 int indexCard = deck.Deck.FindIndex(c => c == cardData);
-                PhotonView.Get(this).RPC("RenderCard", PhotonTargets.All, indexCard, deckIndex, _houseSelected.CurrentValue.tag);
+               PhotonView.Get(this).RPC("RenderCard", PhotonTargets.All, indexCard, deckIndex, _houseSelected.CurrentValue.tag);
 
             }
-            PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posi��o: " + _houseSelected.CurrentValue.name + " do tabuleiro.");
+            //PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.name + " com o dano de: " + cardData.damage + " e usou na posi��o: " + _houseSelected.CurrentValue.name + " do tabuleiro.");
         }
     }
 
@@ -120,8 +120,8 @@ public class PlayerCommands : PunBehaviour
     [PunRPC]
     private void ConsoleLog(string msg)
     {
-        GameObject go = Instantiate(_messageLog);
-        go.GetComponent<TMPro.TMP_Text>().text = msg;
-        go.transform.SetParent(_logParent);
+        // GameObject go = Instantiate(_messageLog);
+        // go.GetComponent<TMPro.TMP_Text>().text = msg;
+        // go.transform.SetParent(_logParent);
     }
 }

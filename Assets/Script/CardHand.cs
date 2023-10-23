@@ -72,7 +72,7 @@ public class CardHand : MonoBehaviour
                         return;
                     }
                 }
-                Debug.Log("FINISHED");
+                
                 OnDeckFinished?.Invoke();
             }
             UpadteDeckAmount();
@@ -80,6 +80,17 @@ public class CardHand : MonoBehaviour
 
     }
 
+    public bool HasCard()
+    {
+        foreach (var c in Cards)
+        {
+            if (c.gameObject.activeInHierarchy)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 [System.Serializable]
