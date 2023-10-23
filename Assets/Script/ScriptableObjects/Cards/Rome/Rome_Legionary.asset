@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Legionary
   damage: 1
-  defense: 2
+  defense: 3
   type: 1
   sprite: {fileID: 21300000, guid: 1139cd65d2178aa4cbd11b73a35f9203, type: 3}
   cardConfig: {fileID: 11400000, guid: ca16af46b0b0b0546b24bb0c2627b275, type: 2}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Phalanx
   damage: 1
-  defense: 2
+  defense: 3
   type: 1
   sprite: {fileID: 21300000, guid: a55c1cc453ed67b479682a7889d8b701, type: 3}
   cardConfig: {fileID: 11400000, guid: 08a56ff6ad2a6eb439bd37d7dfc860b6, type: 2}

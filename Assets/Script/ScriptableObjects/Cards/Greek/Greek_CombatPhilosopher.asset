@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Greek_CombatPhilosopher
   m_EditorClassIdentifier: 
   cardName: CombatPhilopher
-  damage: 2
+  damage: 3
   defense: 1
   type: 0
   sprite: {fileID: 21300000, guid: 36cd0e3d24ffbc743b336ee4011b2c35, type: 3}

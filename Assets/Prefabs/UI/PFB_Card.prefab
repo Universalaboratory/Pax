@@ -323,19 +323,19 @@ MonoBehaviour:
   Win:
     AudioReference:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+        Data1: -565988592
+        Data2: 1178287922
+        Data3: 1320592518
+        Data4: 1989231277
+      Path: event:/SFX/Action/Action_Win
   Lose:
     AudioReference:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+        Data1: -1199650711
+        Data2: 1284887382
+        Data3: 1364849028
+        Data4: 1659204407
+      Path: event:/SFX/Action/Action_Lose
 --- !u!114 &580804694828418588
 MonoBehaviour:
   m_ObjectHideFlags: 0
