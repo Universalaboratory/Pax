@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Greek_Hoplite
   m_EditorClassIdentifier: 
   cardName: Hoplite
-  damage: 1
+  damage: 4
   defense: 2
   type: 1
   sprite: {fileID: 21300000, guid: a55c1cc453ed67b479682a7889d8b701, type: 3}

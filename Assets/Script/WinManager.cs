@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Sunflyer.Audio;
 using UnityEngine;
 
 
@@ -19,6 +20,8 @@ public class WinManager : MonoBehaviour
     public List<HouseManager> topLine;
     public List<HouseManager> centerLine;
     public List<HouseManager> bottomLine;
+    public AudioInstanceReference Sound;
+    private CardHand _hand;
 
     public bool _hasChampion = false;
 
@@ -35,13 +38,23 @@ public class WinManager : MonoBehaviour
         {
             Instance = this;
         }
+        _hand = FindObjectOfType<CardHand>();
+        Sound.SetupInstance();
     }
+
     public void ShowWinner(string winner)
     {
+        Sound.SetParameterByName("Win", CardType.ROMA.ToString() == winner ? 0 : 1);
+        Sound.PlayAudio();
         string text = winner + " Venceu!!";
         textoResultado.text = text;
         resultGo.SetActive(true);
         _hasChampion = true;
+    }
+
+    private bool Won(string winner)
+    {
+        return _hand.Cards[0].cardData.type.ToString() == winner;
     }
 
     private void FixedUpdate()

@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Button_with_text
       objectReference: {fileID: 0}
+    - target: {fileID: 6176992479876829728, guid: a4ee50165eba80d42876ea3df32b10a3, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6176992479876829728, guid: a4ee50165eba80d42876ea3df32b10a3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 71173511517e15b46baba39e797b36f5, type: 3}
     - target: {fileID: 6214187765815319938, guid: a4ee50165eba80d42876ea3df32b10a3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
