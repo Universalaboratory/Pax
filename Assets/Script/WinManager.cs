@@ -65,13 +65,14 @@ public class WinManager : MonoBehaviour
         }
     }
 
-    public void hasChampion()
+    public bool hasChampion()
     {
         CardType cardType = CardType.ROMA;
 
         if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
         {
             ShowWinner(CardType.ROMA.ToString());
+            return true;
         }
 
         cardType = CardType.GRECIA;
@@ -79,7 +80,10 @@ public class WinManager : MonoBehaviour
         if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
         {
             ShowWinner(CardType.GRECIA.ToString());
+            return true;
         }
+        
+        return false;
     }
 
     private bool CheckRowsForWinner(CardType cardType)

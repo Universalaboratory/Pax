@@ -13,8 +13,11 @@ public class MainMenuEvents : MonoBehaviour
 
     private void Start()
     {
+        if(newGameButton)
         newGameButton.SetActive(false);
+        if(settingsButton)
         settingsButton.SetActive(false);
+        if(backButton)
         backButton.SetActive(false);
     }
 
@@ -29,10 +32,10 @@ public class MainMenuEvents : MonoBehaviour
 
     public void OnClickExit()
     {
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #endif
-            Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
     }
 
     public void OnClickNewGame()
@@ -43,7 +46,12 @@ public class MainMenuEvents : MonoBehaviour
     IEnumerator LoadGameHall()
     {
         yield return new WaitForSecondsRealtime(1);
-        SceneManager.LoadScene(1);
+        LoadNewScene(1);
+    }
+
+    public void LoadNewScene(int sceneId)
+    {
+        SceneManager.LoadScene(sceneId);
     }
 
     public void OnClickSettings()
