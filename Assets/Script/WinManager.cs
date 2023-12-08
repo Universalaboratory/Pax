@@ -21,6 +21,7 @@ public class WinManager : MonoBehaviour
     public List<HouseManager> centerLine;
     public List<HouseManager> bottomLine;
     public AudioInstanceReference Sound;
+    public CardHand Hand => _hand;
     private CardHand _hand;
 
     public bool _hasChampion = false;
@@ -82,7 +83,7 @@ public class WinManager : MonoBehaviour
             ShowWinner(CardType.GRECIA.ToString());
             return true;
         }
-        
+
         return false;
     }
 

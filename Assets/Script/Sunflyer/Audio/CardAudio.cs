@@ -36,7 +36,8 @@ namespace Sunflyer.Audio
             {
                 if (house.CurrentCard)
                 {
-                    if (WinManager.Instance.hasChampion() || _card)
+                    if (WinManager.Instance.hasChampion() || !WinManager.Instance.Hand.HasCard() ||
+                    WinManager.Instance.Hand.CardsAmount() == 1)
                     {
                         return;
                     }
@@ -52,6 +53,7 @@ namespace Sunflyer.Audio
                     return;
                 }
             }
+
             Use.PlayAudio();
         }
 

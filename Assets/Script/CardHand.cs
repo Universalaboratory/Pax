@@ -93,6 +93,19 @@ public class CardHand : MonoBehaviour
         }
         return false;
     }
+
+    public int CardsAmount()
+    {
+        int cardAmount = 0;
+        foreach (var c in Cards)
+        {
+            if (c.gameObject.activeInHierarchy)
+            {
+                cardAmount++;
+            }
+        }
+        return cardAmount;
+    }
 }
 
 [System.Serializable]
