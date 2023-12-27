@@ -106,6 +106,7 @@ public class PlayerCommands : PunBehaviour
         {
             _hand.ReceiveDeck(_cardLibrary.Decks[deckIndex == 0 ? 1 : 0]);
         }
+        Debug.Log("Pode começar a jogar");
     }
 
     [PunRPC]

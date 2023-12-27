@@ -72,12 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf7e02080245c34f93ae4aeaa0a88c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardsData:
-  - {fileID: 11400000, guid: 7781830aa70de054c82b8605cccf6387, type: 2}
-  - {fileID: 11400000, guid: 4a68f4f019572f344b34ebfd6f1dda7f, type: 2}
-  - {fileID: 11400000, guid: fd00b118c70499a46a6012ae20c83c94, type: 2}
-  - {fileID: 11400000, guid: d84f226ef6fef744f81e4e56435e8b56, type: 2}
-  - {fileID: 11400000, guid: c514a3f8ecfa9274a85ca502282ddf04, type: 2}
+  _cardsData: []
   _messageLog: {fileID: 3943622673075543673, guid: cce776dd65f5ba34ba71558025f9ebf9, type: 3}
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
   _cardLibrary: {fileID: 11400000, guid: d6e4c73f71ec6ee4b868003b4231a0ad, type: 2}
