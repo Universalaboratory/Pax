@@ -20,6 +20,7 @@ TagManager:
   - 51
   - 52
   - 53
+  - CardConteiner
   layers:
   - Default
   - TransparentFX

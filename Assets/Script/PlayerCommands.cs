@@ -5,6 +5,7 @@ using System;
 using ExitGames.Client.Photon.StructWrapping;
 using UnityEngine.XR;
 using System.Collections;
+using DG.Tweening;
 
 //Responsavel por Executar comandos simples
 public class PlayerCommands : PunBehaviour
@@ -22,18 +23,12 @@ public class PlayerCommands : PunBehaviour
         _logParent = GameObject.FindGameObjectWithTag("LogParent").transform;
         _cards = GameObject.FindObjectsOfType<Card>();
 
-        foreach (Card card in _cards)
-        {
-            card.OnCardselected += HandleCard;
-            card.OnCardUsed += HandleCardUsed;
-        }
-
         _hand = FindObjectOfType<CardHand>();
 
         if (PhotonNetwork.isMasterClient)
         {
             int setDeck = UnityEngine.Random.Range(0, 2);
-            PhotonView.Get(this).RPC("SetupDeck", PhotonTargets.All, setDeck);
+            PhotonView.Get(this).RPC("SetupDeck", PhotonTargets.AllBuffered, setDeck);
         }
 
     }
@@ -106,7 +101,19 @@ public class PlayerCommands : PunBehaviour
         {
             _hand.ReceiveDeck(_cardLibrary.Decks[deckIndex == 0 ? 1 : 0]);
         }
-        Debug.Log("Pode começar a jogar");
+        GameObject cardConteiner = GameObject.FindGameObjectWithTag("CardConteiner");
+        if (cardConteiner)
+        {
+            cardConteiner.transform.DOMoveY(100, 1f, false).SetEase(Ease.OutBack).OnComplete(() =>
+            {
+                foreach (Card card in _cards)
+                {
+                    card.OnCardselected += HandleCard;
+                    card.OnCardUsed += HandleCardUsed;
+                    card.gameObject.GetComponent<CardMover>().SetInitialPosition(card.gameObject.transform.position);
+                }
+            });
+        }
     }
 
     [PunRPC]

@@ -26,7 +26,6 @@ public class CardMover : MonoBehaviour
             _startScale = transform.localScale;
             _hasStup = true;
         }
-
     }
 
     private void OnEnable()
@@ -41,7 +40,10 @@ public class CardMover : MonoBehaviour
         _usedInTable = false;
         _isMoving = false;
     }
-
+    public void SetInitialPosition(Vector3 position)
+    {
+        _startPosition = position;
+    }
     public void SetDeck(CardDeck deck)
     {
         _deck = deck;
