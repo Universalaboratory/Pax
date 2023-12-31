@@ -4371,6 +4371,8 @@ MonoBehaviour:
   _myTurn: 0
   timeTurn: 20
   TurnDisplay: {fileID: 1791020852}
+  _cardFields: []
+  _turnCounter: 0
 --- !u!4 &1680049096
 Transform:
   m_ObjectHideFlags: 0
@@ -4739,7 +4741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_fontSize
-      value: 62.7
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_margin.z
@@ -4751,7 +4753,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_fontSizeMax
-      value: 62.7
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_fontSizeBase

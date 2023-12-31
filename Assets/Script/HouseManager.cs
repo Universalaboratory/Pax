@@ -22,6 +22,8 @@ public class HouseManager : MonoBehaviour
     [SerializeField] private AudioPlayer VictorySound, LoseSound;
     private GameObject _soldiers;
 
+    
+
     private void Start()
     {
        // sprHouse = GetComponentInChildren<SpriteRenderer>();
@@ -29,18 +31,21 @@ public class HouseManager : MonoBehaviour
 
     internal void handleNewAction(CardData card)
     {
-        AttributeText.gameObject.SetActive(false);
-        if (currentCardData == null)
+        if (gameObject.GetComponent<HouseSelector>().CanPlay)
         {
-            SetNewOwner(card);
-            AttributeText.gameObject.SetActive(true);
-        }
-        else
-        {
-            SetupAnimation(card);
-            if (card.damage > currentCardData.defense)
+            AttributeText.gameObject.SetActive(false);
+            if (currentCardData == null)
             {
                 SetNewOwner(card);
+                AttributeText.gameObject.SetActive(true);
+            }
+            else
+            {
+                SetupAnimation(card);
+                if (card.damage > currentCardData.defense)
+                {
+                    SetNewOwner(card);
+                }
             }
         }
     }
@@ -67,29 +72,40 @@ public class HouseManager : MonoBehaviour
 
     private void SetupAnimation(CardData card)
     {
-        CanvasGroup.alpha = 0;
-        CanvasGroup.DOFade(1, FadeDuration).OnComplete(() =>
+        if (gameObject.GetComponent<HouseSelector>().CanPlay)
         {
-            CanvasGroup.DOFade(0, FadeDuration).SetDelay(AnimationDuration).OnComplete(() =>
+            CanvasGroup.alpha = 0;
+            CanvasGroup.DOFade(1, FadeDuration).OnComplete(() =>
             {
-                CanvasGroup.alpha = 0;
-                AttributeText.gameObject.SetActive(true);
+                CanvasGroup.DOFade(0, FadeDuration).SetDelay(AnimationDuration).OnComplete(() =>
+                {
+                    CanvasGroup.alpha = 0;
+                    AttributeText.gameObject.SetActive(true);
+                });
             });
-        });
 
-        bool win = card.damage > currentCardData.defense;
-        Texts[0].text = card.cardName;
-        Texts[1].text = win ? WinMessage : LoseMessage;
-        Texts[1].color = win ? WinColor : LoseColor;
-        Texts[2].text = currentCardData.cardName;
+            bool win = card.damage > currentCardData.defense;
+            Texts[0].text = card.cardName;
+            Texts[1].text = win ? WinMessage : LoseMessage;
+            Texts[1].color = win ? WinColor : LoseColor;
+            Texts[2].text = currentCardData.cardName;
+        }
     }
 
     private void SetupUI(CardData card)
     {
-        AttributeText.text = $"Defense: {card.defense}";
+        if (gameObject.GetComponent<HouseSelector>().CanPlay)
+        {
+            AttributeText.text = $"Defense: {card.defense}";
+        }
     }
     public CardData GetCardData()
     {
-        return currentCardData;
+        if (gameObject.GetComponent<HouseSelector>().CanPlay)
+        {
+            return currentCardData;
+        }
+
+        return null;
     }
 }

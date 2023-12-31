@@ -8,14 +8,28 @@ public class HouseSelector : MonoBehaviour
     [SerializeField] private GameObjectVariable _houseSelected;
     [SerializeField] private AudioPlayer Hover;
 
+    public bool CanPlay
+    {
+        get { return _canPlay; }
+        set { _canPlay = value; }
+    }
+
+    [SerializeField] private bool _canPlay;
+
     private void OnMouseEnter()
     {
-        Hover.PlayAudio();
-        _houseSelected.CurrentValue = this.gameObject;
+        if (_canPlay)
+        {
+            Hover.PlayAudio();
+            _houseSelected.CurrentValue = this.gameObject;
+        }
     }
 
     private void OnMouseExit()
     {
-        _houseSelected.CurrentValue = null;
+        if (_canPlay)
+        {
+            _houseSelected.CurrentValue = null;
+        }
     }
 }
