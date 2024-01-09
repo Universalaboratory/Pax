@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b5340070e327542a20292391a4ccc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scaleFactor: 0.6
+  _selectedScaleFactor: 0.6
   _usedInTable: 0
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
 --- !u!114 &9525827
@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: 8b428ea0206f3dd4a9df5ee06c0d2e02, type: 2}
+  info: {fileID: 0}
 --- !u!114 &9525829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +397,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &57693229
 Rigidbody2D:
   serializedVersion: 4
@@ -558,6 +567,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &82976793
 Rigidbody2D:
   serializedVersion: 4
@@ -1064,6 +1081,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &269990872
 Rigidbody2D:
   serializedVersion: 4
@@ -1666,6 +1691,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &1178091691
 Rigidbody2D:
   serializedVersion: 4
@@ -1828,6 +1861,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &1198034286
 Rigidbody2D:
   serializedVersion: 4
@@ -2265,7 +2306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b5340070e327542a20292391a4ccc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scaleFactor: 0.6
+  _selectedScaleFactor: 0.6
   _usedInTable: 0
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
 --- !u!114 &1694654867
@@ -2281,6 +2322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: fe3116907d26bc24e935bd6914b36dfa, type: 2}
+  info: {fileID: 0}
 --- !u!114 &1694654868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2423,6 +2465,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &1801228972
 Rigidbody2D:
   serializedVersion: 4
@@ -2957,6 +3007,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &2030179877
 Rigidbody2D:
   serializedVersion: 4
@@ -3186,7 +3244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b5340070e327542a20292391a4ccc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scaleFactor: 0.6
+  _selectedScaleFactor: 0.6
   _usedInTable: 0
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
 --- !u!114 &2033657343
@@ -3202,6 +3260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: e3a7a3891d9c7534ab4bba38df562023, type: 2}
+  info: {fileID: 0}
 --- !u!114 &2033657344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3344,6 +3403,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &2109420608
 Rigidbody2D:
   serializedVersion: 4
@@ -3506,6 +3573,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _houseSelected: {fileID: 11400000, guid: f8c7cc890daa3b34d801c35992eb8c3f, type: 2}
+  Hover:
+    AudioReference:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+      Path: 
 --- !u!50 &2117856583
 Rigidbody2D:
   serializedVersion: 4
