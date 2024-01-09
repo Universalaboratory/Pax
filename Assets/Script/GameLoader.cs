@@ -41,7 +41,7 @@ public class GameLoader : PunBehaviour
         }
         else
         {
-            PhotonNetwork.ConnectUsingSettings("1");
+            PhotonNetwork.ConnectToRegion(CloudRegionCode.sa, "1", null);
         }
     }
     

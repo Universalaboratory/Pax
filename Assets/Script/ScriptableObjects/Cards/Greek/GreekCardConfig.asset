@@ -15,20 +15,32 @@ MonoBehaviour:
   Tiles:
   - Sprite: {fileID: 21300000, guid: 01b1f12f2bfb1b64ca2bcad0a199d752, type: 3}
     TileTag: 11
-  - Sprite: {fileID: 21300000, guid: 40ef2f4a079930143a413d7f36477cff, type: 3}
-    TileTag: 12
-  - Sprite: {fileID: 21300000, guid: 48ce2cd7d1b8bd84b8e9fafbe82392c7, type: 3}
-    TileTag: 13
   - Sprite: {fileID: 21300000, guid: 1dc28f538c36d064186f7c6db7009fbe, type: 3}
+    TileTag: 12
+  - Sprite: {fileID: 21300000, guid: 7448fab42935a2b4db012df281939b1e, type: 3}
+    TileTag: 13
+  - Sprite: {fileID: 21300000, guid: 40ef2f4a079930143a413d7f36477cff, type: 3}
     TileTag: 21
   - Sprite: {fileID: 21300000, guid: 8dc52cdccb5b90945a8f4099190abe57, type: 3}
     TileTag: 22
-  - Sprite: {fileID: 21300000, guid: 3e820186994e7db4286538242e70f61c, type: 3}
-    TileTag: 23
-  - Sprite: {fileID: 21300000, guid: 7448fab42935a2b4db012df281939b1e, type: 3}
-    TileTag: 31
   - Sprite: {fileID: 21300000, guid: 598170e5a15275d4aa4d336111a95760, type: 3}
+    TileTag: 23
+  - Sprite: {fileID: 21300000, guid: 40ef2f4a079930143a413d7f36477cff, type: 3}
+    TileTag: 31
+  - Sprite: {fileID: 21300000, guid: 8dc52cdccb5b90945a8f4099190abe57, type: 3}
     TileTag: 32
-  - Sprite: {fileID: 21300000, guid: ae358dc20fb4cfd4cb1fc09178d5abd9, type: 3}
+  - Sprite: {fileID: 21300000, guid: 598170e5a15275d4aa4d336111a95760, type: 3}
     TileTag: 33
+  - Sprite: {fileID: 21300000, guid: 40ef2f4a079930143a413d7f36477cff, type: 3}
+    TileTag: 41
+  - Sprite: {fileID: 21300000, guid: 8dc52cdccb5b90945a8f4099190abe57, type: 3}
+    TileTag: 42
+  - Sprite: {fileID: 21300000, guid: 598170e5a15275d4aa4d336111a95760, type: 3}
+    TileTag: 43
+  - Sprite: {fileID: 21300000, guid: 48ce2cd7d1b8bd84b8e9fafbe82392c7, type: 3}
+    TileTag: 51
+  - Sprite: {fileID: 21300000, guid: 3e820186994e7db4286538242e70f61c, type: 3}
+    TileTag: 52
+  - Sprite: {fileID: 21300000, guid: ae358dc20fb4cfd4cb1fc09178d5abd9, type: 3}
+    TileTag: 53
   cardType: 1

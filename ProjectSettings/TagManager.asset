@@ -14,6 +14,13 @@ TagManager:
   - 31
   - 32
   - 33
+  - 41
+  - 42
+  - 43
+  - 51
+  - 52
+  - 53
+  - CardConteiner
   layers:
   - Default
   - TransparentFX

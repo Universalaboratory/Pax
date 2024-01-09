@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Sunflyer.Audio;
 using UnityEngine;
 
-
 public class GameInfo
 {
     public bool hasChampion;
@@ -70,7 +69,8 @@ public class WinManager : MonoBehaviour
     {
         CardType cardType = CardType.ROMA;
 
-        if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
+        //if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
+        if (CheckRowsForWinner(cardType))
         {
             ShowWinner(CardType.ROMA.ToString());
             return true;
@@ -78,7 +78,8 @@ public class WinManager : MonoBehaviour
 
         cardType = CardType.GRECIA;
 
-        if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
+        //if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
+        if (CheckRowsForWinner(cardType))
         {
             ShowWinner(CardType.GRECIA.ToString());
             return true;
@@ -91,67 +92,73 @@ public class WinManager : MonoBehaviour
     {
         if (topLine[0].GetCardData()?.cardConfig.cardType == cardType &&
                 topLine[1].GetCardData()?.cardConfig.cardType == cardType &&
-                topLine[2].GetCardData()?.cardConfig.cardType == cardType)
+                topLine[2].GetCardData()?.cardConfig.cardType == cardType &&
+                topLine[3].GetCardData()?.cardConfig.cardType == cardType &&
+                topLine[4].GetCardData()?.cardConfig.cardType == cardType)
         {
             return true;
         }
 
         if (bottomLine[0].GetCardData()?.cardConfig.cardType == cardType &&
                 bottomLine[1].GetCardData()?.cardConfig.cardType == cardType &&
-                bottomLine[2].GetCardData()?.cardConfig.cardType == cardType)
+                bottomLine[2].GetCardData()?.cardConfig.cardType == cardType &&
+                bottomLine[3].GetCardData()?.cardConfig.cardType == cardType &&
+                bottomLine[4].GetCardData()?.cardConfig.cardType == cardType)
         {
             return true;
         }
 
         if (centerLine[0].GetCardData()?.cardConfig.cardType == cardType &&
                 centerLine[1].GetCardData()?.cardConfig.cardType == cardType &&
-                centerLine[2].GetCardData()?.cardConfig.cardType == cardType)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    private bool CheckColumnsForWinner(CardType cardType)
-    {
-        if (topLine[0].GetCardData()?.cardConfig.cardType == cardType &&
-                centerLine[0].GetCardData()?.cardConfig.cardType == cardType &&
-                bottomLine[0].GetCardData()?.cardConfig.cardType == cardType)
-        {
-            return true;
-        }
-
-        if (topLine[1].GetCardData()?.cardConfig.cardType == cardType &&
-                centerLine[1].GetCardData()?.cardConfig.cardType == cardType &&
-                bottomLine[1].GetCardData()?.cardConfig.cardType == cardType)
-        {
-            return true;
-        }
-
-        if (topLine[2].GetCardData()?.cardConfig.cardType == cardType &&
                 centerLine[2].GetCardData()?.cardConfig.cardType == cardType &&
-                bottomLine[2].GetCardData()?.cardConfig.cardType == cardType)
+                centerLine[3].GetCardData()?.cardConfig.cardType == cardType &&
+                centerLine[4].GetCardData()?.cardConfig.cardType == cardType)
         {
             return true;
         }
+
         return false;
     }
 
-    private bool CheckDiagonalsForWinner(CardType cardType)
-    {
-        if (
-            (topLine[0].GetCardData()?.cardConfig.cardType == cardType &&
-             centerLine[1].GetCardData()?.cardConfig.cardType == cardType &&
-             bottomLine[2].GetCardData()?.cardConfig.cardType == cardType)
+    //private bool CheckColumnsForWinner(CardType cardType)
+    //{
+    //    if (topLine[0].GetCardData()?.cardConfig.cardType == cardType &&
+    //            centerLine[0].GetCardData()?.cardConfig.cardType == cardType &&
+    //            bottomLine[0].GetCardData()?.cardConfig.cardType == cardType)
+    //    {
+    //        return true;
+    //    }
 
-             ||
-            (topLine[2].GetCardData()?.cardConfig.cardType == cardType &&
-             centerLine[1].GetCardData()?.cardConfig.cardType == cardType &&
-             bottomLine[0].GetCardData()?.cardConfig.cardType == cardType))
-        {
-            return true;
-        }
-        return false;
-    }
+    //    if (topLine[1].GetCardData()?.cardConfig.cardType == cardType &&
+    //            centerLine[1].GetCardData()?.cardConfig.cardType == cardType &&
+    //            bottomLine[1].GetCardData()?.cardConfig.cardType == cardType)
+    //    {
+    //        return true;
+    //    }
+
+    //    if (topLine[2].GetCardData()?.cardConfig.cardType == cardType &&
+    //            centerLine[2].GetCardData()?.cardConfig.cardType == cardType &&
+    //            bottomLine[2].GetCardData()?.cardConfig.cardType == cardType)
+    //    {
+    //        return true;
+    //    }
+    //    return false;
+    //}
+
+    //private bool CheckDiagonalsForWinner(CardType cardType)
+    //{
+    //    if (
+    //        (topLine[0].GetCardData()?.cardConfig.cardType == cardType &&
+    //         centerLine[1].GetCardData()?.cardConfig.cardType == cardType &&
+    //         bottomLine[2].GetCardData()?.cardConfig.cardType == cardType)
+
+    //         ||
+    //        (topLine[2].GetCardData()?.cardConfig.cardType == cardType &&
+    //         centerLine[1].GetCardData()?.cardConfig.cardType == cardType &&
+    //         bottomLine[0].GetCardData()?.cardConfig.cardType == cardType))
+    //    {
+    //        return true;
+    //    }
+    //    return false;
+    //}
 }
