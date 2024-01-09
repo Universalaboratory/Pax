@@ -182,8 +182,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1215172675775368928, guid: 031ce2e9b8327bb4aaa9e76d8b0613e6, type: 3}
+      propertyPath: SetParamaterOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215172675775368928, guid: 031ce2e9b8327bb4aaa9e76d8b0613e6, type: 3}
       propertyPath: Audio.AudioReference.Path
       value: event:/MUSIC/Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215172675775368928, guid: 031ce2e9b8327bb4aaa9e76d8b0613e6, type: 3}
+      propertyPath: Audio.Parameters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215172675775368928, guid: 031ce2e9b8327bb4aaa9e76d8b0613e6, type: 3}
+      propertyPath: Audio.Parameters.Array.data[0]
+      value: Menu Change
       objectReference: {fileID: 0}
     - target: {fileID: 1215172675775368928, guid: 031ce2e9b8327bb4aaa9e76d8b0613e6, type: 3}
       propertyPath: Audio.AudioReference.Guid.Data1

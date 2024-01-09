@@ -51,7 +51,7 @@ MonoBehaviour:
         Data2: 1189332096
         Data3: -650616671
         Data4: -1998976216
-      Path: event:/MUSIC/Gameplay
+      Path: event:/Music/Gameplay
     UseAudioInstance: 1
     Parameters: []
     StopMode: 0
@@ -59,3 +59,6 @@ MonoBehaviour:
     StopIfPlaying: 1
   SetGlobalInstance: 1
   PlayOnStart: 1
+  SetParamaterOnStart: 0
+  ParamID: 0
+  ParamValue: 0

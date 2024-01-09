@@ -26,6 +26,11 @@ namespace Sunflyer.Audio
                 _audioInstance = AudioManager.Instance.CreateInstance(AudioReference);
         }
 
+        public void SetupInstance(EventInstance audioInstance)
+        {
+            _audioInstance = audioInstance;
+        }
+
         public override void PlayAudio()
         {
             if (!UseAudioInstance)

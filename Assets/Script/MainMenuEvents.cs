@@ -8,11 +8,16 @@ public class MainMenuEvents : MonoBehaviour
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject exitButton;
     [SerializeField] private GameObject newGameButton;
+    [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject backButton;
 
     private void Start()
     {
+        if(newGameButton)
         newGameButton.SetActive(false);
+        if(settingsButton)
+        settingsButton.SetActive(false);
+        if(backButton)
         backButton.SetActive(false);
     }
 
@@ -21,15 +26,16 @@ public class MainMenuEvents : MonoBehaviour
         playButton.SetActive(false);
         exitButton.SetActive(false);
         newGameButton.SetActive(true);
+        settingsButton.SetActive(true);
         backButton.SetActive(true);
     }
 
     public void OnClickExit()
     {
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #endif
-            Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
     }
 
     public void OnClickNewGame()
@@ -40,7 +46,12 @@ public class MainMenuEvents : MonoBehaviour
     IEnumerator LoadGameHall()
     {
         yield return new WaitForSecondsRealtime(1);
-        SceneManager.LoadScene(1);
+        LoadNewScene(1);
+    }
+
+    public void LoadNewScene(int sceneId)
+    {
+        SceneManager.LoadScene(sceneId);
     }
 
     public void OnClickSettings()
@@ -53,6 +64,7 @@ public class MainMenuEvents : MonoBehaviour
         playButton.SetActive(true);
         exitButton.SetActive(true);
         newGameButton.SetActive(false);
+        settingsButton.SetActive(false);
         backButton.SetActive(false);
     }
 }

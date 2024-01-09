@@ -19,6 +19,8 @@ namespace Sunflyer.Audio
         [SerializeField] protected AudioInstanceReference Audio;
         [SerializeField] protected bool SetGlobalInstance;
         [SerializeField] protected bool PlayOnStart = true;
+        [SerializeField] private bool SetParamaterOnStart;
+        [SerializeField] private int ParamID, ParamValue;
 
         private void Start()
         {
@@ -32,7 +34,19 @@ namespace Sunflyer.Audio
                 AudioInstance = new StaticAudioInstance();
             }
 
-            Audio.SetupInstance();
+            if (SetParamaterOnStart)
+            {
+                if (!Audio.Reference.IsNull &&
+                AudioInstance.Reference.Equals(Audio.Reference) && 
+                AudioInstance.Instance.isValid())
+                {
+                    Audio.SetupInstance(AudioInstance.Instance);
+                    Audio.SetParameterByName(ParamID, ParamValue);
+                }
+            }
+
+            if (!Audio.AudioInstance.isValid())
+                Audio.SetupInstance();
 
             if (!PlayOnStart || !CanPlayAudio()) return;
 

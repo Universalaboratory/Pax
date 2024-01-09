@@ -21,6 +21,7 @@ public class WinManager : MonoBehaviour
     public List<HouseManager> centerLine;
     public List<HouseManager> bottomLine;
     public AudioInstanceReference Sound;
+    public CardHand Hand => _hand;
     private CardHand _hand;
 
     public bool _hasChampion = false;
@@ -65,13 +66,14 @@ public class WinManager : MonoBehaviour
         }
     }
 
-    public void hasChampion()
+    public bool hasChampion()
     {
         CardType cardType = CardType.ROMA;
 
         if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
         {
             ShowWinner(CardType.ROMA.ToString());
+            return true;
         }
 
         cardType = CardType.GRECIA;
@@ -79,7 +81,10 @@ public class WinManager : MonoBehaviour
         if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
         {
             ShowWinner(CardType.GRECIA.ToString());
+            return true;
         }
+
+        return false;
     }
 
     private bool CheckRowsForWinner(CardType cardType)

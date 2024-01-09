@@ -12,16 +12,13 @@ namespace Sunflyer.Audio
         [SerializeField] private AudioPlayer Hover, Upgrade, Return, Win, Lose;
         private Card _card;
 
-        private void Awake()
+        private void Start()
         {
             TryGetComponent(out _card);
             _card.OnCardselected += OnCardSelect;
             _card.OnCardUsed += OnCardUsed;
             _card.OnCardHovered += OnCardHover;
-        }
 
-        private void Start()
-        {
             Select.SetupInstance();
             Use.SetupInstance();
             Select.SetParameterByName(Parameter, _card.cardData.type);
@@ -39,6 +36,12 @@ namespace Sunflyer.Audio
             {
                 if (house.CurrentCard)
                 {
+                    if (WinManager.Instance.hasChampion() || !WinManager.Instance.Hand.HasCard() ||
+                    WinManager.Instance.Hand.CardsAmount() == 1)
+                    {
+                        return;
+                    }
+
                     if (house.CurrentCard.defense > cardData.damage)
                     {
                         Lose.PlayAudio();
@@ -50,6 +53,7 @@ namespace Sunflyer.Audio
                     return;
                 }
             }
+
             Use.PlayAudio();
         }
 
