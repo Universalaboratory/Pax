@@ -35,8 +35,7 @@ public class CardHand : MonoBehaviour
 
         for (int i = 0; i < Cards.Count; i++)
         {
-            Cards[i].cardData = _deck.Peek();
-            Cards[i].UpdateUI();
+            Cards[i].ReceiveCardData(_deck.Peek());
             if (Cards[i].TryGetComponent(out CardMover mover))
             {
                 mover.SetDeck(deck);
@@ -59,9 +58,7 @@ public class CardHand : MonoBehaviour
         {
             if (_deck.Count > 0)
             {
-
-                card.cardData = _deck.Peek();
-                card.UpdateUI();
+                card.ReceiveCardData(_deck.Peek());
                 _deck.Dequeue();
                 card.gameObject.SetActive(true);
             }

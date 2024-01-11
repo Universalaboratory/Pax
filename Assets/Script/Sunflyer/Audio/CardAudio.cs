@@ -11,6 +11,7 @@ namespace Sunflyer.Audio
         [SerializeField] private AudioInstanceReference Select, Use;
         [SerializeField] private AudioPlayer Hover, Upgrade, Return, Win, Lose;
         private Card _card;
+        private bool _firstCombat;
 
         private void Start()
         {
@@ -18,9 +19,15 @@ namespace Sunflyer.Audio
             _card.OnCardselected += OnCardSelect;
             _card.OnCardUsed += OnCardUsed;
             _card.OnCardHovered += OnCardHover;
+            _card.OnReceiveCardData += OnReceiveCardData;
 
             Select.SetupInstance();
             Use.SetupInstance();
+
+        }
+
+        private void OnReceiveCardData(CardData newCardData)
+        {
             Select.SetParameterByName(Parameter, _card.cardData.type);
             Use.SetParameterByName(Parameter, _card.cardData.type);
         }
@@ -50,6 +57,7 @@ namespace Sunflyer.Audio
                     {
                         Win.PlayAudio();
                     }
+
                     return;
                 }
             }
@@ -72,6 +80,8 @@ namespace Sunflyer.Audio
             _card.OnCardselected -= OnCardSelect;
             _card.OnCardUsed -= OnCardUsed;
             _card.OnCardHovered -= OnCardHover;
+            _card.OnReceiveCardData -= OnReceiveCardData;
+
             AudioManager.Instance?.ReleaseInstance(Select.AudioInstance);
             AudioManager.Instance?.ReleaseInstance(Use.AudioInstance);
         }

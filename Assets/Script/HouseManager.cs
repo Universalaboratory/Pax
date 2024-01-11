@@ -19,14 +19,15 @@ public class HouseManager : MonoBehaviour
     [SerializeField] private string WinMessage = "Won Against", LoseMessage = "Lost Against";
     [SerializeField] private Color WinColor = Color.green, LoseColor = Color.red;
     [SerializeField] private float AnimationDuration = .5f, FadeDuration = .1f;
-    [SerializeField] private AudioPlayer VictorySound, LoseSound;
     private GameObject _soldiers;
+    private CombatAudio _combatAudio;
 
-    
+
 
     private void Start()
     {
-       // sprHouse = GetComponentInChildren<SpriteRenderer>();
+        TryGetComponent(out _combatAudio);
+        // sprHouse = GetComponentInChildren<SpriteRenderer>();
     }
 
     internal void handleNewAction(CardData card)
@@ -41,6 +42,10 @@ public class HouseManager : MonoBehaviour
             }
             else
             {
+                
+                if (_combatAudio)
+                    _combatAudio.ChangeCombatMusic();
+
                 SetupAnimation(card);
                 if (card.damage > currentCardData.defense)
                 {

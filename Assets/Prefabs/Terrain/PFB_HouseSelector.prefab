@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 5382910017452051630}
   - component: {fileID: 2290945693470665419}
   - component: {fileID: 2521142235035032843}
+  - component: {fileID: 1859588516721220959}
   m_Layer: 0
   m_Name: PFB_HouseSelector
   m_TagString: Untagged
@@ -362,6 +363,7 @@ MonoBehaviour:
         Data3: 999672459
         Data4: 369760105
       Path: event:/Sfx/UI/Terrain/Terrain_Select
+  _canPlay: 0
 --- !u!114 &2521142235035032843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,22 +391,19 @@ MonoBehaviour:
   LoseColor: {r: 0.990566, g: 0.40650588, b: 0.40650588, a: 1}
   AnimationDuration: 0.5
   FadeDuration: 0.1
-  VictorySound:
-    AudioReference:
-      Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
-  LoseSound:
-    AudioReference:
-      Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+--- !u!114 &1859588516721220959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3944524910435075778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf8f8ed8174f44499e3cbad2ad322e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicParamenter: Menu Change
 --- !u!1 &5237776146746547998
 GameObject:
   m_ObjectHideFlags: 0

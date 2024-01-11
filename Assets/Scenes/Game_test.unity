@@ -4371,7 +4371,8 @@ MonoBehaviour:
   _myTurn: 0
   timeTurn: 20
   TurnDisplay: {fileID: 1791020852}
-  _cardFields: []
+  _cardFieldList: []
+  _cardFieldListSize: 0
   _turnCounter: 0
 --- !u!4 &1680049096
 Transform:
@@ -5413,7 +5414,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -119
   m_Sprite: {fileID: 21300000, guid: 83cee439d856c15449d6453116696ffb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
