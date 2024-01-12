@@ -20,6 +20,7 @@ public class WinManager : MonoBehaviour
     public List<HouseManager> centerLine;
     public List<HouseManager> bottomLine;
     public AudioInstanceReference Sound;
+    [SerializeField] private AudioPlayer Win, Lose;
     public CardHand Hand => _hand;
     private CardHand _hand;
     public System.Action<bool> OnWin;
@@ -47,12 +48,22 @@ public class WinManager : MonoBehaviour
 
     public void ShowWinner(string winner)
     {
+        Debug.Log("Win");
         OnWin?.Invoke(Won(winner));
         Sound.SetParameterByName("Stinger", Won(winner) ? 0 : 1);
         Sound.PlayAudio();
 
+        if (Won(winner))
+        {
+            Lose.PlayAudio();
+        }
+        else
+        {
+            Win.PlayAudio();
+        }
+
         _musicPlayer.StopAudio();
-        
+
         string text = (Won(winner) ? "Voce Venceu!!" : " Voce Perdeu!! ") + "\n\n" + winner + " Venceu!!";
 
         textoResultado.text = text;
@@ -90,6 +101,25 @@ public class WinManager : MonoBehaviour
         if (CheckRowsForWinner(cardType))
         {
             ShowWinner(CardType.GRECIA.ToString());
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool HASCHAMPION()
+    {
+        CardType cardType = CardType.ROMA;
+
+        if (CheckRowsForWinner(cardType))
+        {
+            return true;
+        }
+
+        cardType = CardType.GRECIA;
+
+        if (CheckRowsForWinner(cardType))
+        {
             return true;
         }
 

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using Sunflyer.Audio;
 using FMOD.Studio;
+using System.Collections;
 
 public class HouseManager : MonoBehaviour
 {
@@ -19,23 +20,30 @@ public class HouseManager : MonoBehaviour
     [SerializeField] private string WinMessage = "Won Against", LoseMessage = "Lost Against";
     [SerializeField] private Color WinColor = Color.green, LoseColor = Color.red;
     [SerializeField] private float AnimationDuration = .5f, FadeDuration = .1f;
+    public AudioInstanceReference Use;
+    [SerializeField] private AudioPlayer Win, Lose;
+
     private GameObject _soldiers;
     private CombatAudio _combatAudio;
-
+    private WaitForEndOfFrame _wait;
 
 
     private void Start()
     {
         TryGetComponent(out _combatAudio);
+        Use.SetupInstance();
         // sprHouse = GetComponentInChildren<SpriteRenderer>();
     }
 
     internal void handleNewAction(CardData card)
     {
         AttributeText.gameObject.SetActive(false);
+        Use.SetParameterByName("Action", card.type);
+
         if (currentCardData == null)
         {
             SetNewOwner(card);
+            StartCoroutine(PlayUseAudio(false));
             AttributeText.gameObject.SetActive(true);
         }
         else
@@ -45,11 +53,14 @@ public class HouseManager : MonoBehaviour
                 _combatAudio.ChangeCombatMusic();
 
             SetupAnimation(card);
+            StartCoroutine(PlayUseAudio(true, card.damage > currentCardData.defense));
+
             if (card.damage > currentCardData.defense)
             {
                 SetNewOwner(card);
             }
         }
+
     }
 
     private void SetNewOwner(CardData card)
@@ -101,5 +112,33 @@ public class HouseManager : MonoBehaviour
     public CardData GetCardData()
     {
         return currentCardData;
+    }
+
+    private IEnumerator PlayUseAudio(bool fight, bool won = true)
+    {
+        yield return _wait;
+
+        if (WinManager.Instance.hasChampion() || !WinManager.Instance.Hand.HasCard() ||
+        WinManager.Instance.Hand.CardsAmount() == 1)
+        {
+            yield break;
+        }
+
+        if (fight)
+        {
+            if (won)
+            {
+                Win.PlayAudio();
+            }
+            else
+            {
+                Lose.PlayAudio();
+            }
+
+            yield break;
+        }
+
+        Use.PlayAudio();
+
     }
 }

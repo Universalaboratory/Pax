@@ -3719,6 +3719,22 @@ MonoBehaviour:
     StopMode: 0
     PlayIfNotPlaying: 1
     StopIfPlaying: 1
+  Win:
+    AudioReference:
+      Guid:
+        Data1: -565988592
+        Data2: 1178287922
+        Data3: 1320592518
+        Data4: 1989231277
+      Path: event:/Sfx/Action/Action_Win
+  Lose:
+    AudioReference:
+      Guid:
+        Data1: -1199650711
+        Data2: 1284887382
+        Data3: 1364849028
+        Data4: 1659204407
+      Path: event:/Sfx/Action/Action_Lose
   _hasChampion: 0
   resultGo: {fileID: 1583281767}
   textoResultado: {fileID: 533584943}
