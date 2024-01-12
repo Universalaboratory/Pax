@@ -32,25 +32,22 @@ public class HouseManager : MonoBehaviour
 
     internal void handleNewAction(CardData card)
     {
-        if (gameObject.GetComponent<HouseSelector>().CanPlay)
+        AttributeText.gameObject.SetActive(false);
+        if (currentCardData == null)
         {
-            AttributeText.gameObject.SetActive(false);
-            if (currentCardData == null)
+            SetNewOwner(card);
+            AttributeText.gameObject.SetActive(true);
+        }
+        else
+        {
+
+            if (_combatAudio)
+                _combatAudio.ChangeCombatMusic();
+
+            SetupAnimation(card);
+            if (card.damage > currentCardData.defense)
             {
                 SetNewOwner(card);
-                AttributeText.gameObject.SetActive(true);
-            }
-            else
-            {
-                
-                if (_combatAudio)
-                    _combatAudio.ChangeCombatMusic();
-
-                SetupAnimation(card);
-                if (card.damage > currentCardData.defense)
-                {
-                    SetNewOwner(card);
-                }
             }
         }
     }
@@ -99,18 +96,10 @@ public class HouseManager : MonoBehaviour
 
     private void SetupUI(CardData card)
     {
-        if (gameObject.GetComponent<HouseSelector>().CanPlay)
-        {
-            AttributeText.text = $"Defense: {card.defense}";
-        }
+        AttributeText.text = $"Defense: {card.defense}";
     }
     public CardData GetCardData()
     {
-        if (gameObject.GetComponent<HouseSelector>().CanPlay)
-        {
-            return currentCardData;
-        }
-
-        return null;
+        return currentCardData;
     }
 }
