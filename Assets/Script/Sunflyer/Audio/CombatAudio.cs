@@ -15,7 +15,7 @@ namespace Sunflyer.Audio
                 return;
 
             MusicPlayer.AudioInstance.Instance.setParameterByName(MusicParamenter, 1);
-
         }
+
     }
 }

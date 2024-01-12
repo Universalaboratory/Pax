@@ -3709,11 +3709,11 @@ MonoBehaviour:
   Sound:
     AudioReference:
       Guid:
-        Data1: -565988592
-        Data2: 1178287922
-        Data3: 1320592518
-        Data4: 1989231277
-      Path: event:/SFX/Action/Action_Win
+        Data1: 509650669
+        Data2: 1075973178
+        Data3: -1825891194
+        Data4: -38050920
+      Path: event:/Music/EndGame
     UseAudioInstance: 1
     Parameters: []
     StopMode: 0

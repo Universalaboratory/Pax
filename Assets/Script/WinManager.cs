@@ -22,11 +22,13 @@ public class WinManager : MonoBehaviour
     public AudioInstanceReference Sound;
     public CardHand Hand => _hand;
     private CardHand _hand;
+    public System.Action<bool> OnWin;
 
     public bool _hasChampion = false;
 
     public GameObject resultGo;
     public TMPro.TMP_Text textoResultado;
+    private MusicPlayer _musicPlayer;
 
     private void Awake()
     {
@@ -39,14 +41,20 @@ public class WinManager : MonoBehaviour
             Instance = this;
         }
         _hand = FindObjectOfType<CardHand>();
+        _musicPlayer = FindObjectOfType<MusicPlayer>();
         Sound.SetupInstance();
     }
 
     public void ShowWinner(string winner)
     {
-        Sound.SetParameterByName("Win", CardType.ROMA.ToString() == winner ? 0 : 1);
+        OnWin?.Invoke(Won(winner));
+        Sound.SetParameterByName("Stinger", Won(winner) ? 0 : 1);
         Sound.PlayAudio();
-        string text = winner + " Venceu!!";
+
+        _musicPlayer.StopAudio();
+        
+        string text = (Won(winner) ? "Voce Venceu!!" : " Voce Perdeu!! ") + "\n\n" + winner + " Venceu!!";
+
         textoResultado.text = text;
         resultGo.SetActive(true);
         _hasChampion = true;
@@ -54,7 +62,7 @@ public class WinManager : MonoBehaviour
 
     private bool Won(string winner)
     {
-        return _hand.Cards[0].cardData.type.ToString() == winner;
+        return _hand.Cards[0].cardData.cardConfig.cardType.ToString() == winner;
     }
 
     private void FixedUpdate()
