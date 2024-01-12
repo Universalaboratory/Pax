@@ -41,15 +41,8 @@ namespace Sunflyer.Audio
         {
             if (target.TryGetComponent(out HouseManager house))
             {
-                // if (WinManager.Instance.hasChampion() || !WinManager.Instance.Hand.HasCard() ||
-                // WinManager.Instance.Hand.CardsAmount() == 1)
-                // {
-                //     return;
-                // }
-
                 if (house.CurrentCard)
                 {
-
                     if (house.CurrentCard.defense > cardData.damage)
                     {
                         Lose.PlayAudio();
@@ -61,6 +54,12 @@ namespace Sunflyer.Audio
 
                     return;
                 }
+            }
+
+            if (WinManager.Instance.hasChampion() || !WinManager.Instance.Hand.HasCard() ||
+            WinManager.Instance.Hand.CardsAmount() == 1)
+            {
+                return;
             }
 
             Use.PlayAudio();
