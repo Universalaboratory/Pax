@@ -391,6 +391,35 @@ MonoBehaviour:
   LoseColor: {r: 0.990566, g: 0.40650588, b: 0.40650588, a: 1}
   AnimationDuration: 0.5
   FadeDuration: 0.1
+  Use:
+    AudioReference:
+      Guid:
+        Data1: -1945940843
+        Data2: 1247491266
+        Data3: 1738434447
+        Data4: -592152983
+      Path: event:/Sfx/UI/Cards/Card_Use
+    UseAudioInstance: 1
+    Parameters: []
+    StopMode: 0
+    PlayIfNotPlaying: 1
+    StopIfPlaying: 1
+  Win:
+    AudioReference:
+      Guid:
+        Data1: -565988592
+        Data2: 1178287922
+        Data3: 1320592518
+        Data4: 1989231277
+      Path: event:/Sfx/Action/Action_Win
+  Lose:
+    AudioReference:
+      Guid:
+        Data1: -1199650711
+        Data2: 1284887382
+        Data3: 1364849028
+        Data4: 1659204407
+      Path: event:/Sfx/Action/Action_Lose
 --- !u!114 &1859588516721220959
 MonoBehaviour:
   m_ObjectHideFlags: 0

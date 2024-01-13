@@ -14,6 +14,7 @@ namespace Sunflyer.Audio
         [Header("Audio Instance")]
         [SerializeField] private bool UseAudioInstance = true;
         [SerializeField] private List<string> Parameters = new List<string>();
+        [SerializeField] private List<PARAMETER_ID> ParametersFMOD = new List<PARAMETER_ID>();
         [Header("Configs")]
         [SerializeField] private FMOD.Studio.STOP_MODE StopMode = FMOD.Studio.STOP_MODE.ALLOWFADEOUT;
         [SerializeField] private bool PlayIfNotPlaying = true, StopIfPlaying = true;
