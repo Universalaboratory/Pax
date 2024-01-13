@@ -48,7 +48,11 @@ public class WinManager : MonoBehaviour
 
     public void ShowWinner(string winner)
     {
-        Debug.Log("Win");
+        if (_hasChampion)
+        {
+            return;
+        }
+        
         OnWin?.Invoke(Won(winner));
         Sound.SetParameterByName("Stinger", Won(winner) ? 0 : 1);
         Sound.PlayAudio();
