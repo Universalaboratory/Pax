@@ -6,6 +6,6 @@ public class DebugPosition : MonoBehaviour
 {
     void Update()
     {
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
     }
 }

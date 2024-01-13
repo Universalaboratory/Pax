@@ -23,6 +23,14 @@ public class PaxTurnManager : PunBehaviour
     [SerializeField] private float _turnTimer = 31f;
     [SerializeField] private TextMeshProUGUI _UITimerText;
 
+    private PlayerCommands myCommand = null;
+
+
+    public void SetupCommand(PlayerCommands playerCommands)
+    {
+        this.myCommand = playerCommands;
+    }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -71,7 +79,7 @@ public class PaxTurnManager : PunBehaviour
             _UITimerText.text = $"Timer: \n 00:{(int)_turnTimer}";
 
         if (_turnTimer <= 0)
-            ToggleTurn();
+            myCommand.ToggleTurnRpc();
     }
 
     public bool isMyTurn()

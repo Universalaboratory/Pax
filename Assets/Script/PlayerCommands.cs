@@ -31,6 +31,11 @@ public class PlayerCommands : PunBehaviour
             PhotonView.Get(this).RPC("SetupDeck", PhotonTargets.AllBuffered, setDeck);
         }
 
+        if (PhotonView.Get(this).isMine)
+        {
+            PaxTurnManager.Instance.SetupCommand(this);
+        }
+
     }
 
     private void OnDisable()
@@ -62,6 +67,11 @@ public class PlayerCommands : PunBehaviour
             PhotonView.Get(this).RPC("ConsoleLog", PhotonTargets.All, PhotonNetwork.player.NickName + " Selecionou a carta: " + cardData.cardName + " com o dano de: " + cardData.damage);
         }
     }
+
+    public void ToggleTurnRpc()
+    {
+        PhotonView.Get(this).RPC("ToggleTurn", PhotonTargets.All);
+    }
     public void HandleCardUsed(CardData cardData, GameObject target)
     {
         if (PhotonView.Get(this).isMine)
@@ -69,7 +79,7 @@ public class PlayerCommands : PunBehaviour
             if (PaxTurnManager.Instance.isMyTurn())
             {
 
-                PhotonView.Get(this).RPC("ToggleTurn", PhotonTargets.All);
+                this.ToggleTurnRpc();
                 CardDeck deck = _cardLibrary.Decks.Find(d => d.Deck.Contains(cardData));
                 int deckIndex = _cardLibrary.Decks.IndexOf(deck);
                 int indexCard = deck.Deck.FindIndex(c => c == cardData);
