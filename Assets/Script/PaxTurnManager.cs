@@ -20,6 +20,9 @@ public class PaxTurnManager : PunBehaviour
     private Color translucent = new Color(1f, 1f, 1f, 0.6f);
     private Color transparent = new Color(1f, 1f, 1f, 0f);
 
+    [SerializeField] private float _turnTimer = 31f;
+    [SerializeField] private TextMeshProUGUI _UITimerText;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -58,6 +61,19 @@ public class PaxTurnManager : PunBehaviour
         TurnManager();
     }
 
+    private void Update()
+    {
+        _turnTimer -= Time.deltaTime;
+        
+        if (_turnTimer < 10)
+            _UITimerText.text = $"Timer: \n 00:0{(int)_turnTimer}";
+        else
+            _UITimerText.text = $"Timer: \n 00:{(int)_turnTimer}";
+
+        if (_turnTimer <= 0)
+            ToggleTurn();
+    }
+
     public bool isMyTurn()
     {
         return _myTurn;
@@ -83,6 +99,7 @@ public class PaxTurnManager : PunBehaviour
 
     public void ToggleTurn()
     {
+        _turnTimer = 31f;
         _turnCounter++;
         _isMasterTurn = !_isMasterTurn;
         _myTurn = false;
