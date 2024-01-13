@@ -17,6 +17,9 @@ public class PaxTurnManager : PunBehaviour
     [SerializeField] private int _cardFieldListSize;
     [SerializeField] private int _turnCounter;
 
+    private Color translucent = new Color(1f, 1f, 1f, 0.6f);
+    private Color transparent = new Color(1f, 1f, 1f, 0f);
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -124,9 +127,15 @@ public class PaxTurnManager : PunBehaviour
             for (int i = initRange; i < _cardFieldListSize; i++)
             {
                 if (i < endRange)
+                {
                     _cardFieldList[i].GetComponent<HouseSelector>().CanPlay = true;
+                    _cardFieldList[i].GetComponent<Renderer>().material.SetColor("_Color", transparent);
+                }
                 else
+                {
                     _cardFieldList[i].GetComponent<HouseSelector>().CanPlay = false;
+                    _cardFieldList[i].GetComponent<Renderer>().material.SetColor("_Color", translucent);
+                }
             }
         }
         else if (operation == '-')
@@ -134,9 +143,15 @@ public class PaxTurnManager : PunBehaviour
             for (int i = initRange; i >= 0; i--)
             {
                 if (i > endRange)
+                {
                     _cardFieldList[i].GetComponent<HouseSelector>().CanPlay = true;
+                    _cardFieldList[i].GetComponent<Renderer>().material.SetColor("_Color", transparent);
+                }
                 else
+                {
                     _cardFieldList[i].GetComponent<HouseSelector>().CanPlay = false;
+                    _cardFieldList[i].GetComponent<Renderer>().material.SetColor("_Color", translucent);
+                }
             }
         }
         else
