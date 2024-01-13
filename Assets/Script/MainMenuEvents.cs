@@ -26,7 +26,7 @@ public class MainMenuEvents : MonoBehaviour
         playButton.SetActive(false);
         exitButton.SetActive(false);
         newGameButton.SetActive(true);
-        settingsButton.SetActive(true);
+        //settingsButton.SetActive(true);
         backButton.SetActive(true);
     }
 
