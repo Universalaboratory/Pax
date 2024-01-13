@@ -11,13 +11,19 @@ namespace Sunflyer.Audio
         [SerializeField] private AudioInstanceReference Select, Use;
         [SerializeField] private AudioPlayer Hover, Upgrade, Return, Win, Lose;
         private Card _card;
-        private bool _firstCombat;
 
         private void Start()
         {
             TryGetComponent(out _card);
+
+            if (!_card)
+            {
+                _card = GetComponentInParent<Card>();
+                transform.parent = null;
+            }
+
             _card.OnCardselected += OnCardSelect;
-            _card.OnCardUsed += OnCardUsed;
+           // _card.OnCardUsed += OnCardUsed;
             _card.OnCardHovered += OnCardHover;
             _card.OnReceiveCardData += OnReceiveCardData;
 
@@ -41,28 +47,10 @@ namespace Sunflyer.Audio
         {
             if (target.TryGetComponent(out HouseManager house))
             {
-                if (house.CurrentCard)
-                {
-                    if (house.CurrentCard.defense > cardData.damage)
-                    {
-                        Lose.PlayAudio();
-                    }
-                    else
-                    {
-                        Win.PlayAudio();
-                    }
-
-                    return;
-                }
+                Debug.Log($"SETUP NEW CARD { _card.cardData.type}");
+               // house.Use.SetParameterByName(Parameter, _card.cardData.type);
             }
-
-            if (WinManager.Instance.hasChampion() || !WinManager.Instance.Hand.HasCard() ||
-            WinManager.Instance.Hand.CardsAmount() == 1)
-            {
-                return;
-            }
-
-            Use.PlayAudio();
+            //  StartCoroutine(PlayUseAudio(cardData, target));
         }
 
         public void OnCardReturn()
@@ -78,7 +66,7 @@ namespace Sunflyer.Audio
         private void OnDestroy()
         {
             _card.OnCardselected -= OnCardSelect;
-            _card.OnCardUsed -= OnCardUsed;
+           // _card.OnCardUsed -= OnCardUsed;
             _card.OnCardHovered -= OnCardHover;
             _card.OnReceiveCardData -= OnReceiveCardData;
 
