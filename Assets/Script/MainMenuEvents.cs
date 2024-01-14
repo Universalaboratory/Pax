@@ -46,7 +46,7 @@ public class MainMenuEvents : MonoBehaviour
     IEnumerator LoadGameHall()
     {
         yield return new WaitForSecondsRealtime(1);
-        LoadNewScene(1);
+        LoadNewScene(2);
     }
 
     public void LoadNewScene(int sceneId)
