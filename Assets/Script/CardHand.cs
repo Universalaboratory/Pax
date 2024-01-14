@@ -48,7 +48,7 @@ public class CardHand : MonoBehaviour
 
     private void UpadteDeckAmount()
     {
-        DeckAmount.text = $"{CardDeck.DeckName} \nDeck: {_deck.Count}";
+        DeckAmount.text = $"{_deck.Count}";
     }
 
     public void DrawCard()

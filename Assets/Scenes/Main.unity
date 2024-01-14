@@ -213,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_text
-      value: Jogadores na sala
+      value: Players in room
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_fontSize
@@ -945,7 +945,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Coloque seu nome...
+  m_text: nickname...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1773,7 +1773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_text
-      value: "Configura\xE7\xF5es"
+      value: Settings
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_fontSize
@@ -1863,7 +1863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_text
-      value: Sair
+      value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 8640519017333908825, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_Pivot.x
@@ -2221,6 +2221,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1018330496
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 321534955336942018, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 321534955336942018, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211608070802363064, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211608070802363064, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722686194380828188, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722686194380828188, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722686194380828188, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722686194380828188, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722686194380828188, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722686194380828188, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722686194380828188, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722686194380828188, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722686194380828188, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722686194380828188, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 491377717e0743d428d1f74c0752b0f6, type: 3}
 --- !u!1001 &1170717788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2372,7 +2441,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_text
-      value: Entrar na sala
+      value: 'Enter room
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_fontSize
@@ -2644,7 +2715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_text
-      value: Nova partida
+      value: new game
       objectReference: {fileID: 0}
     - target: {fileID: 8709903665401159361, guid: 49f767626db7fcc40868483c17232a88, type: 3}
       propertyPath: m_fontSize
@@ -2992,7 +3063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_text
-      value: Iniciar
+      value: Start
       objectReference: {fileID: 0}
     - target: {fileID: 8640519017333908825, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_Pivot.x
@@ -3132,6 +3203,7 @@ MonoBehaviour:
   _lobyWindow: {fileID: 179950592}
   _mainWindow: {fileID: 1719046043}
   _imageLoop: {fileID: 484623784}
+  levelLoader: {fileID: 0}
 --- !u!4 &2036353596
 Transform:
   m_ObjectHideFlags: 0
@@ -3220,7 +3292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_text
-      value: "Configura\xE7\xF5es"
+      value: settings
       objectReference: {fileID: 0}
     - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_fontSize
@@ -3749,10 +3821,12 @@ MonoBehaviour:
   newGameButton: {fileID: 0}
   settingsButton: {fileID: 0}
   backButton: {fileID: 0}
+  levelLoader: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1018330496}
   - {fileID: 519420032}
   - {fileID: 668193028}
   - {fileID: 1881038674}

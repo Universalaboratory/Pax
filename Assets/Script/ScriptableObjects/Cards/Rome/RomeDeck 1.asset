@@ -17,4 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4a68f4f019572f344b34ebfd6f1dda7f, type: 2}
   - {fileID: 11400000, guid: fd00b118c70499a46a6012ae20c83c94, type: 2}
   DeckName: Roman
-  DeckImage: {fileID: 21300000, guid: 582bc7f3c994ed8428180fdcf6e18973, type: 3}
+  DeckImage: {fileID: 21300000, guid: 6c19d6a9744723a4b951064d8a0e647f, type: 3}

@@ -25,14 +25,19 @@ public class PaxTurnManager : PunBehaviour
 
     private PlayerCommands myCommand = null;
 
-
+    private bool finish = false;
     public void SetupCommand(PlayerCommands playerCommands)
     {
         this.myCommand = playerCommands;
     }
-
+    public void OnFinish()
+    {
+        this.finish = true;
+        _UITimerText.gameObject.SetActive(false);
+    }
     private void Awake()
     {
+        WinManager.Instance.OnFinish += OnFinish;
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -71,6 +76,7 @@ public class PaxTurnManager : PunBehaviour
 
     private void Update()
     {
+        if (finish) return;
         _turnTimer -= Time.deltaTime;
         
         if (_turnTimer < 10)

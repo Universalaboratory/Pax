@@ -14,8 +14,13 @@ public class GameLoader : PunBehaviour
     [SerializeField] private GameObject _lobyWindow;
     [SerializeField] private GameObject _mainWindow;
     [SerializeField] private GameObject _imageLoop;
+    [SerializeField] private LevelLoader levelLoader;
     private bool isConnecting;
 
+    private void Start()
+    {
+        levelLoader = FindAnyObjectByType<LevelLoader>();
+    }
     private void Awake()
     {
         PhotonNetwork.autoJoinLobby = false;
@@ -70,7 +75,8 @@ public class GameLoader : PunBehaviour
         _mainWindow.SetActive(true);
         _lobyWindow.SetActive(false);
         _imageLoop.SetActive(false);
-        SceneManager.LoadScene("Main");
+        levelLoader.LoadLevel("Main");
+        //SceneManager.LoadScene("Main");
     }
 
     //chamado quando algum player é desconectado

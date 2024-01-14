@@ -7,12 +7,14 @@ public class PlayerGameManager : PunBehaviour
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject playerInstantiated = null;
-
+    [SerializeField] private LevelLoader levelLoader;
     private void Start()
     {
+        levelLoader = FindObjectOfType<LevelLoader>();
         if (!PhotonNetwork.connected)
         {
-            SceneManager.LoadScene("Main");
+            levelLoader.LoadLevel("Main");
+            //SceneManager.LoadScene("Main");
             return;
         }
 
@@ -30,7 +32,8 @@ public class PlayerGameManager : PunBehaviour
     public override void OnLeftRoom()
     {
         base.OnLeftRoom();
-        SceneManager.LoadScene("Main");
+        levelLoader.LoadLevel("Main");
+        //SceneManager.LoadScene("Main");
     }
     public void PlayerDisconnect()
     {

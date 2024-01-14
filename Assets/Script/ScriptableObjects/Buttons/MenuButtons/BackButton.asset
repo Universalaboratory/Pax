@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772319376b2ce3a4592617eb7c4e7ea8, type: 3}
   m_Name: BackButton
   m_EditorClassIdentifier: 
-  buttonText: Voltar
+  buttonText: return
   buttonIcon: {fileID: 0}

@@ -24,7 +24,7 @@ public class CardInfoDisplay : MonoBehaviour
 
     public void UpdateUI()
     {
-        cardText.text = $"{card.cardData.cardName} \nAtaque: {card.cardData.damage} \nDefesa: {card.cardData.defense}";
+        cardText.text = $"{card.cardData.cardName} \nAtack: {card.cardData.damage} \nDefense: {card.cardData.defense}";
         cardImage.sprite = card.cardData.sprite;
     }
 }
