@@ -2533,6 +2533,18 @@ PrefabInstance:
       value: 73.39
       objectReference: {fileID: 0}
     - target: {fileID: 8640519017333908825, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.64544
+      objectReference: {fileID: 0}
+    - target: {fileID: 8640519017333908825, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.64544
+      objectReference: {fileID: 0}
+    - target: {fileID: 8640519017333908825, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.64544
+      objectReference: {fileID: 0}
+    - target: {fileID: 8640519017333908825, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2566,7 +2578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8640519017333908825, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 210.695
+      value: 181
       objectReference: {fileID: 0}
     - target: {fileID: 8640519017333908825, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2987,7 +2999,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3482,6 +3494,10 @@ PrefabInstance:
     - target: {fileID: 3859069734970569673, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_Name
       value: ButtonSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859069734970569673, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5909259521708990080, guid: 2d9fb4eac45348f4b871b8b3cdcd6102, type: 3}
       propertyPath: m_text

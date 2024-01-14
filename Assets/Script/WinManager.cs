@@ -28,6 +28,7 @@ public class WinManager : MonoBehaviour
     public bool _hasChampion = false;
 
     public GameObject resultGo;
+    public GameObject NomeDaVez;
     public TMPro.TMP_Text textoResultado;
     private MusicPlayer _musicPlayer;
 
@@ -68,6 +69,7 @@ public class WinManager : MonoBehaviour
 
         textoResultado.text = text;
         resultGo.SetActive(true);
+        NomeDaVez.SetActive(false);
         _hasChampion = true;
     }
 
