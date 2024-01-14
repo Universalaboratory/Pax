@@ -114,7 +114,7 @@ public class PlayerCommands : PunBehaviour
         GameObject cardConteiner = GameObject.FindGameObjectWithTag("CardConteiner");
         if (cardConteiner)
         {
-            cardConteiner.transform.DOMoveY(100, 1f, false).SetEase(Ease.OutBack).OnComplete(() =>
+            cardConteiner.transform.DOMoveY(202, 1f, false).SetEase(Ease.OutBack).OnComplete(() =>
             {
                 foreach (Card card in _cards)
                 {

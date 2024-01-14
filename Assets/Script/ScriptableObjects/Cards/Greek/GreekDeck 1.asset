@@ -17,4 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 97a047a4c8a703946bcfa9e36666e6ab, type: 2}
   - {fileID: 11400000, guid: c41d70ff53eccd24fbd47d53d1b9c8d5, type: 2}
   DeckName: Greek
-  DeckImage: {fileID: 21300000, guid: 5a99764a9382af641be362de53fe2d85, type: 3}
+  DeckImage: {fileID: 21300000, guid: be34c6965c114334cb7fa3c2ddb8720c, type: 3}

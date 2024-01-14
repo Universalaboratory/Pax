@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Sunflyer.Audio;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameInfo
 {
@@ -24,7 +25,7 @@ public class WinManager : MonoBehaviour
     public CardHand Hand => _hand;
     private CardHand _hand;
     public System.Action<bool> OnWin;
-
+    public UnityAction OnFinish;
     public bool _hasChampion = false;
 
     public GameObject resultGo;
@@ -52,7 +53,7 @@ public class WinManager : MonoBehaviour
         {
             return;
         }
-        
+        OnFinish?.Invoke();
         OnWin?.Invoke(Won(winner));
         Sound.SetParameterByName("Stinger", Won(winner) ? 0 : 1);
         Sound.PlayAudio();

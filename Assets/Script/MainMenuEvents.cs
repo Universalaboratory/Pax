@@ -10,10 +10,11 @@ public class MainMenuEvents : MonoBehaviour
     [SerializeField] private GameObject newGameButton;
     [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject backButton;
-
+    [SerializeField] private LevelLoader levelLoader;
     private void Start()
     {
-        if(newGameButton)
+        levelLoader = FindObjectOfType<LevelLoader>();
+        if (newGameButton)
         newGameButton.SetActive(false);
         if(settingsButton)
         settingsButton.SetActive(false);
@@ -40,7 +41,15 @@ public class MainMenuEvents : MonoBehaviour
 
     public void OnClickNewGame()
     {
-        StartCoroutine("LoadGameHall");
+        if (levelLoader)
+        {
+            levelLoader.LoadLevel(2);
+        }
+        else
+        {
+            StartCoroutine("LoadGameHall");
+        }
+        
     }
 
     IEnumerator LoadGameHall()

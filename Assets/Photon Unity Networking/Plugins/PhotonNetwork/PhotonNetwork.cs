@@ -3287,27 +3287,41 @@ public static class PhotonNetwork
         SceneManager.LoadScene(levelName);
     }
 
+    public static void LoadLevel(string levelName, LevelLoader levelLoader)
+    {
+        networkingPeer.AsynchLevelLoadCall = false;
 
-	/// <summary>Wraps single asynchronous loading of a level to pause the network message-queue. Optionally syncs the loaded level in a room.</summary>
-	/// <remarks>
-	/// While loading levels, it makes sense to not dispatch messages received by other players.
-	/// This method takes care of that by setting PhotonNetwork.isMessageQueueRunning = false and enabling
-	/// the queue when the level was loaded.
-	///
-	/// To sync the loaded level in a room, set PhotonNetwork.automaticallySyncScene to true.
-	/// The Master Client of a room will then sync the loaded level with every other player in the room.
-	///
-	/// You should make sure you don't fire RPCs before you load another scene (which doesn't contain
-	/// the same GameObjects and PhotonViews). You can call this in OnJoinedRoom.
-	///
-	/// This uses Application.LoadLevel in Unity version not yet featuring the SceneManager API.
-	/// </remarks>
-	/// <returns>The async operation.</returns>
-	/// <param name='levelName'>
-	/// Name of the level to load. Make sure it's available to all clients in the same room.
-	/// </param>
-	/// <param name="mode">LoadSceneMode either single or additive</param>
-	public static AsyncOperation LoadLevelAsync(string levelName)
+        if (PhotonNetwork.automaticallySyncScene)
+        {
+            networkingPeer.SetLevelInPropsIfSynced(levelName, true);
+        }
+
+        PhotonNetwork.isMessageQueueRunning = false;
+        networkingPeer.loadingLevelAndPausedNetwork = true;
+        levelLoader.LoadLevel(levelName);
+    }
+
+
+    /// <summary>Wraps single asynchronous loading of a level to pause the network message-queue. Optionally syncs the loaded level in a room.</summary>
+    /// <remarks>
+    /// While loading levels, it makes sense to not dispatch messages received by other players.
+    /// This method takes care of that by setting PhotonNetwork.isMessageQueueRunning = false and enabling
+    /// the queue when the level was loaded.
+    ///
+    /// To sync the loaded level in a room, set PhotonNetwork.automaticallySyncScene to true.
+    /// The Master Client of a room will then sync the loaded level with every other player in the room.
+    ///
+    /// You should make sure you don't fire RPCs before you load another scene (which doesn't contain
+    /// the same GameObjects and PhotonViews). You can call this in OnJoinedRoom.
+    ///
+    /// This uses Application.LoadLevel in Unity version not yet featuring the SceneManager API.
+    /// </remarks>
+    /// <returns>The async operation.</returns>
+    /// <param name='levelName'>
+    /// Name of the level to load. Make sure it's available to all clients in the same room.
+    /// </param>
+    /// <param name="mode">LoadSceneMode either single or additive</param>
+    public static AsyncOperation LoadLevelAsync(string levelName)
 	{
         networkingPeer.AsynchLevelLoadCall = true;
 
