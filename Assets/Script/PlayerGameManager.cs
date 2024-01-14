@@ -31,6 +31,7 @@ public class PlayerGameManager : PunBehaviour
 
     public override void OnLeftRoom()
     {
+        Debug.Log("teste");
         base.OnLeftRoom();
         levelLoader.LoadLevel("Main");
         //SceneManager.LoadScene("Main");

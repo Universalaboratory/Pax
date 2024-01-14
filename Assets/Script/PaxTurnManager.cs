@@ -97,7 +97,7 @@ public class PaxTurnManager : PunBehaviour
     {
         if (_myTurn)
         {
-            TurnDisplay.text = $"{PhotonNetwork.player.NickName} Turn";
+            TurnDisplay.text = $"Your Turn";
         }
         else
         {
@@ -105,7 +105,7 @@ public class PaxTurnManager : PunBehaviour
             {
                 if (player != PhotonNetwork.player)
                 {
-                    TurnDisplay.text = $"{player.NickName} Turn";
+                    TurnDisplay.text = $"Enemy Turn";
                 }
             }
         }

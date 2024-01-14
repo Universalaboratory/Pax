@@ -33,6 +33,8 @@ public class GameLoader : PunBehaviour
         _lobyWindow.SetActive(false);
     }
 
+
+
     public void Connect()
     {        
         isConnecting = true;
@@ -75,7 +77,8 @@ public class GameLoader : PunBehaviour
         _mainWindow.SetActive(true);
         _lobyWindow.SetActive(false);
         _imageLoop.SetActive(false);
-        levelLoader.LoadLevel("Main");
+        if(SceneManager.GetActiveScene().name != "Main")
+            levelLoader.LoadLevel("Main");
         //SceneManager.LoadScene("Main");
     }
 
@@ -94,7 +97,7 @@ public class GameLoader : PunBehaviour
 
     public void LeftRoom()
     {
-        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.Disconnect();
     }
 
     public override void OnJoinedRoom()
