@@ -69,7 +69,7 @@ public class WinManager : MonoBehaviour
 
         _musicPlayer.StopAudio();
 
-        string text = (Won(winner) ? "Voce Venceu!!" : " Voce Perdeu!! ") + "\n\n" + winner + " Venceu!!";
+        string text = (Won(winner) ? "You win!!" : " You lost!! ") + "\n\n" + winner + " Win!!";
 
         textoResultado.text = text;
         resultGo.SetActive(true);
