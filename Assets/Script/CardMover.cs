@@ -72,10 +72,10 @@ public class CardMover : MonoBehaviour
                     }
                     else
                     {
-                        transform.position = Camera.main.WorldToScreenPoint(_houseSelected.CurrentValue.transform.position);
                         _usedInTable = true;
                         _card.OnCardUsed.Invoke(_card.cardData, house.gameObject);
                         _card.gameObject.SetActive(false);
+                        transform.position = _startPosition;
                     }
 
                 }
@@ -86,7 +86,7 @@ public class CardMover : MonoBehaviour
     private void ResetPostion()
     {
         transform.position = _startPosition;
-        transform.localScale = _startScale;
+        transform.localScale = new Vector3(1.2f,1.2f,1.2f);
     }
 
     public void OnMouseEnterUI()
