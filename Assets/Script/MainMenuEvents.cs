@@ -60,7 +60,14 @@ public class MainMenuEvents : MonoBehaviour
 
     public void LoadNewScene(int sceneId)
     {
-        SceneManager.LoadScene(sceneId);
+        if (levelLoader)
+        {
+            levelLoader.LoadLevel(sceneId);
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneId);
+        }
     }
 
     public void OnClickSettings()
