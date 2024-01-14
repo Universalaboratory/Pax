@@ -103,6 +103,11 @@ public class CardHand : MonoBehaviour
         }
         return cardAmount;
     }
+
+    public bool HasCard(CardData card)
+    {
+        return CardDeck.Deck.Contains(card);
+    }
 }
 
 [System.Serializable]

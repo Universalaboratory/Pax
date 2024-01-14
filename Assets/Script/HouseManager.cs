@@ -26,12 +26,14 @@ public class HouseManager : MonoBehaviour
     private GameObject _soldiers;
     private CombatAudio _combatAudio;
     private WaitForEndOfFrame _wait;
+    private CardHand _hand;
 
 
     private void Start()
     {
         TryGetComponent(out _combatAudio);
         Use.SetupInstance();
+        _hand = FindObjectOfType<CardHand>();
         // sprHouse = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -43,7 +45,7 @@ public class HouseManager : MonoBehaviour
         if (currentCardData == null)
         {
             SetNewOwner(card);
-            StartCoroutine(PlayUseAudio(false));
+            StartCoroutine(PlayUseAudio(card, false));
             AttributeText.gameObject.SetActive(true);
         }
         else
@@ -53,7 +55,7 @@ public class HouseManager : MonoBehaviour
                 _combatAudio.ChangeCombatMusic();
 
             SetupAnimation(card);
-            StartCoroutine(PlayUseAudio(true, card.damage > currentCardData.defense));
+            StartCoroutine(PlayUseAudio(card, true, card.damage > currentCardData.defense));
 
             if (card.damage > currentCardData.defense)
             {
@@ -114,7 +116,7 @@ public class HouseManager : MonoBehaviour
         return currentCardData;
     }
 
-    private IEnumerator PlayUseAudio(bool fight, bool won = true)
+    private IEnumerator PlayUseAudio(CardData card, bool fight, bool won = true)
     {
         yield return _wait;
 
@@ -126,7 +128,7 @@ public class HouseManager : MonoBehaviour
 
         if (fight)
         {
-            if (won)
+            if (won && _hand.HasCard(card) || !won && !_hand.HasCard(card))
             {
                 Win.PlayAudio();
             }
