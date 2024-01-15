@@ -1928,6 +1928,7 @@ GameObject:
   - component: {fileID: 481485345}
   - component: {fileID: 481485344}
   - component: {fileID: 481485343}
+  - component: {fileID: 481485347}
   m_Layer: 5
   m_Name: sim
   m_TagString: Untagged
@@ -2074,6 +2075,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481485341}
   m_CullTransparentMesh: 1
+--- !u!114 &481485347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481485341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e85e418e2d7ef54e8310f158dafcb4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickAudio:
+    AudioReference:
+      Guid:
+        Data1: -1234499590
+        Data2: 1117996997
+        Data3: 1635680133
+        Data4: -1648958910
+      Path: event:/Sfx/UI/Button/Button_Select
+  HoverAudio:
+    AudioReference:
+      Guid:
+        Data1: 1253151230
+        Data2: 1210345216
+        Data3: 397088947
+        Data4: 2101446867
+      Path: event:/Sfx/UI/Button/Button_Hover
 --- !u!1001 &511725430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7140,6 +7169,7 @@ GameObject:
   - component: {fileID: 1963562020}
   - component: {fileID: 1963562019}
   - component: {fileID: 1963562018}
+  - component: {fileID: 1963562022}
   m_Layer: 5
   m_Name: "n\xE3o"
   m_TagString: Untagged
@@ -7274,6 +7304,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963562016}
   m_CullTransparentMesh: 1
+--- !u!114 &1963562022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963562016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e85e418e2d7ef54e8310f158dafcb4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickAudio:
+    AudioReference:
+      Guid:
+        Data1: -1636546346
+        Data2: 1119206759
+        Data3: 1868049051
+        Data4: 1470602888
+      Path: event:/Sfx/UI/Button/Button_Back
+  HoverAudio:
+    AudioReference:
+      Guid:
+        Data1: 1253151230
+        Data2: 1210345216
+        Data3: 397088947
+        Data4: 2101446867
+      Path: event:/Sfx/UI/Button/Button_Hover
 --- !u!1 &1990674951
 GameObject:
   m_ObjectHideFlags: 0
