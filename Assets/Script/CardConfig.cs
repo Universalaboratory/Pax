@@ -22,6 +22,6 @@ public class TileSpriteSetup
 }
 
 public enum CardType{
-    ROMA,
-    GRECIA
+    SPARTA, 
+    ATHENS
 }

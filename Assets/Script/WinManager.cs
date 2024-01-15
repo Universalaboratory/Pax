@@ -91,21 +91,21 @@ public class WinManager : MonoBehaviour
 
     public bool hasChampion()
     {
-        CardType cardType = CardType.ROMA;
+        CardType cardType = CardType.SPARTA;
 
         //if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
         if (CheckRowsForWinner(cardType))
         {
-            ShowWinner(CardType.ROMA.ToString());
+            ShowWinner(CardType.SPARTA.ToString());
             return true;
         }
 
-        cardType = CardType.GRECIA;
+        cardType = CardType.ATHENS;
 
         //if (CheckRowsForWinner(cardType) || CheckColumnsForWinner(cardType) || CheckDiagonalsForWinner(cardType))
         if (CheckRowsForWinner(cardType))
         {
-            ShowWinner(CardType.GRECIA.ToString());
+            ShowWinner(CardType.SPARTA.ToString());
             return true;
         }
 
@@ -114,14 +114,14 @@ public class WinManager : MonoBehaviour
 
     public bool HASCHAMPION()
     {
-        CardType cardType = CardType.ROMA;
-
+        CardType cardType = CardType.SPARTA;
+       
         if (CheckRowsForWinner(cardType))
         {
             return true;
         }
 
-        cardType = CardType.GRECIA;
+        cardType = CardType.ATHENS;
 
         if (CheckRowsForWinner(cardType))
         {

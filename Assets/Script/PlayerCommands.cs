@@ -143,7 +143,7 @@ public class PlayerCommands : PunBehaviour
         yield return new WaitForEndOfFrame();
         if (!_hand.HasCard())
         {
-            PhotonView.Get(this).RPC("ShowWinner", PhotonTargets.All, _hand.CardDeck.Deck[0].cardConfig.cardType == CardType.GRECIA ? CardType.ROMA.ToString() : CardType.GRECIA.ToString());
+            PhotonView.Get(this).RPC("ShowWinner", PhotonTargets.All, _hand.CardDeck.Deck[0].cardConfig.cardType == CardType.ATHENS ? CardType.SPARTA.ToString() : CardType.ATHENS.ToString());
         }
     }
 
