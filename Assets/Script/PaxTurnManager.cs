@@ -98,7 +98,7 @@ public class PaxTurnManager : PunBehaviour
     
     private void UpdateUI()
     {
-        if (_isMasterTurn && _myTurn)
+        if (_isMasterTurn)
         {
             TurnBgn[0].sprite = TurnBgnSprite[0];
             TurnBgn[1].sprite = TurnBgnSprite[1];
