@@ -3,6 +3,7 @@ using Photon;
 using TMPro;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class PaxTurnManager : PunBehaviour
 {
@@ -11,6 +12,8 @@ public class PaxTurnManager : PunBehaviour
     [SerializeField] private bool _myTurn = false;
     [SerializeField] private float timeTurn = 20f;
     [SerializeField] private TextMeshProUGUI TurnDisplay;
+    [SerializeField] private Image[] TurnBgn;
+    [SerializeField] private Sprite[] TurnBgnSprite;
     private CardHand _hand;
 
     [SerializeField] private List<GameObject> _cardFieldList;
@@ -95,6 +98,17 @@ public class PaxTurnManager : PunBehaviour
     
     private void UpdateUI()
     {
+        if (_isMasterTurn && _myTurn)
+        {
+            TurnBgn[0].sprite = TurnBgnSprite[0];
+            TurnBgn[1].sprite = TurnBgnSprite[1];
+        }
+        else
+        {
+            TurnBgn[0].sprite = TurnBgnSprite[1];
+            TurnBgn[1].sprite = TurnBgnSprite[0];
+        }
+
         if (_myTurn)
         {
             TurnDisplay.text = $"Your Turn";
