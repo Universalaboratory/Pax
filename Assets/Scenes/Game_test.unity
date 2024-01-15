@@ -841,7 +841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2730,7 +2730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5866,7 +5866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7023,6 +7023,7 @@ GameObject:
   - component: {fileID: 1950190253}
   - component: {fileID: 1950190252}
   - component: {fileID: 1950190251}
+  - component: {fileID: 1950190255}
   m_Layer: 5
   m_Name: Btn-Sair
   m_TagString: Untagged
@@ -7156,6 +7157,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950190249}
   m_CullTransparentMesh: 1
+--- !u!114 &1950190255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950190249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e85e418e2d7ef54e8310f158dafcb4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickAudio:
+    AudioReference:
+      Guid:
+        Data1: -694329621
+        Data2: 1207153657
+        Data3: -446432884
+        Data4: 919151963
+      Path: event:/Sfx/UI/Button/Button_Back_Menu
+  HoverAudio:
+    AudioReference:
+      Guid:
+        Data1: 1253151230
+        Data2: 1210345216
+        Data3: 397088947
+        Data4: 2101446867
+      Path: event:/Sfx/UI/Button/Button_Hover
 --- !u!1 &1963562016
 GameObject:
   m_ObjectHideFlags: 0
@@ -7344,6 +7373,7 @@ GameObject:
   - component: {fileID: 1990674955}
   - component: {fileID: 1990674954}
   - component: {fileID: 1990674953}
+  - component: {fileID: 1990674956}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -7477,6 +7507,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990674951}
   m_CullTransparentMesh: 1
+--- !u!114 &1990674956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990674951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e85e418e2d7ef54e8310f158dafcb4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickAudio:
+    AudioReference:
+      Guid:
+        Data1: -1234499590
+        Data2: 1117996997
+        Data3: 1635680133
+        Data4: -1648958910
+      Path: event:/Sfx/UI/Button/Button_Select
+  HoverAudio:
+    AudioReference:
+      Guid:
+        Data1: 1253151230
+        Data2: 1210345216
+        Data3: 397088947
+        Data4: 2101446867
+      Path: event:/Sfx/UI/Button/Button_Hover
 --- !u!1 &2001444469
 GameObject:
   m_ObjectHideFlags: 0
